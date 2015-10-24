@@ -7,9 +7,18 @@
 //
 
 import UIKit
+import Parse
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var Username: UITextField!
+    @IBOutlet weak var Password: UITextField!
+    
+    func setInfo(username: String, password: String){
+        self.Username.text = username;
+        self.Password.text = password;
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,7 +31,26 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func registerButtonPressed(sender: UIButton) {
-        if validRegisterDetails() {
+        
+        if validRegisterDetails((self.Username?.text)!, password: (self.Password?.text)!) {
+            //check that username and password are valid
+            
+            //create user in Parse
+            var user = PFUser();
+            user.username = self.Username.text!;
+            user.password = self.Password.text!;
+            user.email = self.Username.text!;
+            
+            user.signUpInBackgroundWithBlock {
+                (succeeded: Bool, error: NSError?) -> Void in
+                if let error = error {
+                    let errorString = error.userInfo["error"] as? NSString
+                    // TODO: tell the user to put in valid info
+                    print(errorString);
+                }
+            }
+            
+            
             self.performSegueWithIdentifier("registerViewToLoginView", sender: self)
         }
         else {
@@ -31,8 +59,25 @@ class RegisterViewController: UIViewController {
     }
     
     //verify register credentials
-    func validRegisterDetails() -> Bool {
-        return true
+    func validRegisterDetails(username: String, password: String) -> Bool {
+        
+        //TODO: give notice if username/password isn't valid
+        
+        if (username.characters.count <= 15){
+            //make sure there username contains string + '@middlebury.edu'
+            return false;
+        }
+        if ((username.hasSuffix("@middlebury.edu")) == false){
+            //make sure we have a valid email
+            return false;
+        }
+        
+        if (password.characters.count < 6){
+            //make sure there are 6 characters in a password
+            return false;
+        }
+        
+        return true;
     }
 
     /*

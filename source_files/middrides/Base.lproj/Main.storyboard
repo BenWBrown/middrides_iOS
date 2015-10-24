@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
         <!--Register View Controller-->
@@ -18,6 +18,7 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vbk-Z2-mZx">
                                 <rect key="frame" x="225" y="176" width="150" height="30"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="JaC-xP-OLB"/>
                                 </constraints>
@@ -26,6 +27,7 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SME-XA-axO">
                                 <rect key="frame" x="225" y="234" width="150" height="30"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="oPD-Fe-cuX"/>
                                 </constraints>
@@ -34,18 +36,21 @@
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpc-zv-liu">
                                 <rect key="frame" x="164" y="180.5" width="42" height="20.5"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLd-7y-tVf">
                                 <rect key="frame" x="165" y="238.5" width="42" height="20.5"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYm-2b-b4H">
                                 <rect key="frame" x="225" y="317" width="137" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Already Registered?"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="registerViewToLoginView" id="iDC-LK-5mg"/>
@@ -53,12 +58,14 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idt-GT-p7p">
                                 <rect key="frame" x="250" y="272" width="87" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Register Me!"/>
                                 <connections>
                                     <action selector="registerButtonPressed:" destination="1xs-6e-Z3g" eventType="touchUpInside" id="KGn-wW-9PK"/>
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vbk-Z2-mZx" firstAttribute="centerX" secondItem="Wok-hH-S7e" secondAttribute="centerX" id="6Lj-gc-KqH"/>
@@ -71,6 +78,10 @@
                             <constraint firstItem="SME-XA-axO" firstAttribute="leading" secondItem="CLd-7y-tVf" secondAttribute="trailing" constant="18" id="rAj-cQ-71f"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Password" destination="SME-XA-axO" id="2hn-8g-Sdk"/>
+                        <outlet property="Username" destination="vbk-Z2-mZx" id="NUw-Yo-mI5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ycY-OX-ttJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,6 +101,7 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AQK-xZ-3iI">
                                 <rect key="frame" x="225.5" y="185" width="150" height="30"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="324-H5-PbA"/>
                                 </constraints>
@@ -98,6 +110,7 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="25z-tq-0cZ">
                                 <rect key="frame" x="225" y="243" width="150" height="30"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="QSf-DV-hRC"/>
                                 </constraints>
@@ -106,18 +119,21 @@
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4CE-ZA-Jc7">
                                 <rect key="frame" x="165" y="189" width="42" height="21"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOI-Oj-GE8">
                                 <rect key="frame" x="165" y="247" width="42" height="21"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NjD-h6-crW">
                                 <rect key="frame" x="272" y="331" width="57" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Register"/>
                                 <connections>
                                     <action selector="registerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mDs-0Y-QMJ"/>
@@ -126,12 +142,14 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xod-ep-5hp">
                                 <rect key="frame" x="281" y="285" width="38" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9T0-vU-z15"/>
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4CE-ZA-Jc7" firstAttribute="centerY" secondItem="AQK-xZ-3iI" secondAttribute="centerY" id="4BN-jZ-wN9"/>
@@ -149,6 +167,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Password" destination="25z-tq-0cZ" id="bVp-tu-ove"/>
+                        <outlet property="Username" destination="AQK-xZ-3iI" id="xqa-Jg-AAh"/>
                         <segue destination="Po5-rz-TDd" kind="show" identifier="loginViewToAnnouncementView" id="fCD-Kw-uw1"/>
                         <segue destination="dCS-zX-UqF" kind="show" identifier="loginViewToVanRequestView" id="i4z-Z7-o8b"/>
                         <segue destination="aME-Ic-zgd" kind="show" identifier="loginViewToDispatcherView" id="yc0-0m-zcl"/>
@@ -172,12 +192,14 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dispatcher Settings view" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIc-ib-LFb">
                                 <rect key="frame" x="205" y="117" width="190" height="21"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJD-7p-cEC">
                                 <rect key="frame" x="276" y="48" width="48" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Logout"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="iuf-Uz-jqt"/>
@@ -185,6 +207,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mM-fB-aD5">
                                 <rect key="frame" x="229" y="453" width="143" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Make announcement"/>
                                 <connections>
                                     <segue destination="pLy-EE-Sxy" kind="show" id="fby-Tv-ukp"/>
@@ -192,6 +215,7 @@
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7OY-49-c5f">
                                 <rect key="frame" x="180" y="236" width="240" height="128"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="XtO-Za-fHQ"/>
@@ -199,6 +223,7 @@
                                 </constraints>
                             </tableView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7OY-49-c5f" firstAttribute="centerY" secondItem="Lyp-2M-WWd" secondAttribute="centerY" id="4kN-h5-blh"/>
@@ -224,6 +249,7 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KiS-rO-dlI">
                                 <rect key="frame" x="251" y="285" width="97" height="30"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="2bv-f5-df3"/>
                                 </constraints>
@@ -232,18 +258,21 @@
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some Text:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byJ-89-gri">
                                 <rect key="frame" x="142" y="289" width="85.5" height="20.5"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dx-Bf-gcY">
                                 <rect key="frame" x="228" y="345" width="145" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Make Announcement"/>
                                 <connections>
                                     <segue destination="aME-Ic-zgd" kind="show" id="nXt-FP-XaL"/>
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="KiS-rO-dlI" firstAttribute="leading" secondItem="byJ-89-gri" secondAttribute="trailing" constant="24" id="181-BQ-pAv"/>
@@ -273,15 +302,18 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbO-Yr-odY">
                                 <rect key="frame" x="261" y="163" width="78" height="21"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V9U-HW-lEu">
                                 <rect key="frame" x="140" y="192" width="320" height="216"/>
+                                <animations/>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mot-ov-kRv">
                                 <rect key="frame" x="249" y="422" width="102" height="30"/>
+                                <animations/>
                                 <state key="normal" title="REQUEST VAN"/>
                                 <connections>
                                     <segue destination="yag-1n-igI" kind="show" id="Yxu-yp-zuu"/>
@@ -289,12 +321,14 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VzU-c4-XIp">
                                 <rect key="frame" x="276" y="59" width="48" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Logout"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="KoV-Sw-lc7"/>
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pbO-Yr-odY" firstAttribute="centerX" secondItem="6CL-dK-EzS" secondAttribute="centerX" id="BHn-Mi-6Nn"/>
@@ -324,18 +358,21 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Confirmation View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0C-VQ-Xfn">
                                 <rect key="frame" x="230" y="177" width="141" height="21"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qR0-kM-8Tu">
                                 <rect key="frame" x="220" y="241" width="142" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Request another van"/>
                                 <connections>
                                     <segue destination="dCS-zX-UqF" kind="show" id="gr0-Kd-a4N"/>
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
@@ -357,18 +394,21 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Announcement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Re9-iC-2wA">
                                 <rect key="frame" x="221" y="228" width="117" height="21"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jk1-kq-ncj">
                                 <rect key="frame" x="264" y="285" width="30" height="30"/>
+                                <animations/>
                                 <state key="normal" title="OK"/>
                                 <connections>
                                     <segue destination="dCS-zX-UqF" kind="show" id="dfp-Hv-zGS"/>
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
@@ -378,8 +418,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gr0-Kd-a4N"/>
-        <segue reference="nXt-FP-XaL"/>
-        <segue reference="iuf-Uz-jqt"/>
+        <segue reference="yc0-0m-zcl"/>
+        <segue reference="iDC-LK-5mg"/>
+        <segue reference="i4z-Z7-o8b"/>
     </inferredMetricsTieBreakers>
 </document>
