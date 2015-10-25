@@ -13,13 +13,35 @@ enum LoginType {
 }
 
 import UIKit
+import Parse
+import Bolts
 
 class LoginViewController: UIViewController {
+    
+    @IBOutlet weak var Password: UITextField!
+    @IBOutlet weak var Username: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        //login known user
+        var curUser = PFUser.currentUser();
+        if (curUser != nil){
+            if (curUser!.username == "dispatcher@middlebury.edu"){
+                self.performSegueWithIdentifier("loginViewToDispatcherView", sender: self)
+            } else {
+                //if user
+                if checkAnnouncment() {
+                    self.performSegueWithIdentifier("loginViewToAnnouncementView", sender: self)
+                } else {
+                    self.performSegueWithIdentifier("loginViewToVanRequestView", sender: self)
+                }
+            }
+        }
+        
+        
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -27,20 +49,28 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonPressed(sender: UIButton) {
-        switch validateLoginCredentials() {
-        case .User:
-            if checkAnnouncment() {
-                self.performSegueWithIdentifier("loginViewToAnnouncementView", sender: self)
-            } else {
-                self.performSegueWithIdentifier("loginViewToVanRequestView", sender: self)
+        var login = validateLoginCredentials(self.Username.text!, password: self.Password.text!)
+        PFUser.logInWithUsernameInBackground("myname", password:"mypass") {
+            (user: PFUser?, error: NSError?) -> Void in
+            if user == nil {
+                login = .Invalid;
             }
-            
-        case .Dispatcher:
-            self.performSegueWithIdentifier("loginViewToDispatcherView", sender: self)
-        
-        case .Invalid:
-            //display invalid login message
-            print("invalid login")
+            switch login{
+            case .User:
+                if self.checkAnnouncment() {
+                    self.performSegueWithIdentifier("loginViewToAnnouncementView", sender: self)
+                } else {
+                    self.performSegueWithIdentifier("loginViewToVanRequestView", sender: self)
+                }
+                
+            case .Dispatcher:
+                self.performSegueWithIdentifier("loginViewToDispatcherView", sender: self)
+                
+            case .Invalid:
+                //display invalid login message
+                print("invalid login, username: " + self.Username.text! + " password: " + self.Password.text!);
+            }
+
         }
         
     }
@@ -49,9 +79,32 @@ class LoginViewController: UIViewController {
         print("register button pressed")
     }
     
-    func validateLoginCredentials() -> LoginType {
-        //validate login here
-        return .User
+    func validateLoginCredentials(username: String, password: String) -> LoginType {
+        //TODO: give notice if username/password isn't valid
+        
+        if (username.characters.count <= 15){
+            //make sure there username contains string + '@middlebury.edu'
+            return .Invalid;
+        }
+        if ((username.hasSuffix("@middlebury.edu")) == false){
+            //make sure we have a valid email
+            return .Invalid;
+        }
+        
+        if (password.characters.count < 6){
+            //make sure there are 6 characters in a password
+            return .Invalid;
+        }
+        
+        
+        //TODO: change dispatcher email?
+        if (username == "dispatcher@middlebury.edu"){
+            return .Dispatcher;
+        }
+        
+
+        return .User;
+
     }
     
     func checkAnnouncment() -> Bool {

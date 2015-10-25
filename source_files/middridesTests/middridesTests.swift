@@ -33,4 +33,27 @@ class middridesTests: XCTestCase {
         }
     }
     
+    //Unit Tests:
+    func testRegistration(){
+        let rView = RegisterViewController();
+        XCTAssert(rView.validRegisterDetails("", password: "") == false, "Registration validity check fails");
+        XCTAssert(rView.validRegisterDetails("ab@middlebury.ed", password: "abcdefg") == false, "Registration   validity check fails");
+        XCTAssert(rView.validRegisterDetails("ab@middlebury.edu", password: "") == false, "Registration validity check fails");
+        XCTAssert(rView.validRegisterDetails("ab@middlebury.edu", password: "abcdef") == true, "Registration validity check fails");
+    }
+    
+    func testLogin(){
+        let lView = LoginViewController();
+        XCTAssert(lView.validateLoginCredentials("", password: "") == .Invalid, "Registration validity check fails");
+        XCTAssert(lView.validateLoginCredentials("ab@middlebury.ed", password: "abcdefg") == .Invalid, "Registration validity check fails");
+        XCTAssert(lView.validateLoginCredentials("ab@middlebury.edu", password: "") == .Invalid, "Registration validity check fails");
+        XCTAssert(lView.validateLoginCredentials("ab@middlebury.edu", password: "abcdefg") == .User, "Registration validity check fails");
+        XCTAssert(lView.validateLoginCredentials("ab@middlebury.edu", password: "abc265/#g") == .User, "Registration validity check fails");
+        XCTAssert(lView.validateLoginCredentials("cd@middlebury.edu", password: "abc265/#g") == .User, "Registration validity check fails");
+        XCTAssert(lView.validateLoginCredentials("ab@middlebury.edu", password: "abcabc") == .User, "Registration validity check fails");
+        //TODO: need to test the actual process of Parse checking the username/password
+        //Need to try a login that is valid in terms of syntax but has wrong password
+        
+    }
+    
 }
