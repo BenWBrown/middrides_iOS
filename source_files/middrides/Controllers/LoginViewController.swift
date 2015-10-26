@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonPressed(sender: UIButton) {
         var login = validateLoginCredentials(self.Username.text!, password: self.Password.text!)
-        PFUser.logInWithUsernameInBackground("myname", password:"mypass") {
+        PFUser.logInWithUsernameInBackground(self.Username.text!, password: self.Password.text!) {
             (user: PFUser?, error: NSError?) -> Void in
             if user == nil {
                 login = .Invalid;

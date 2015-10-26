@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Parse
 @testable import middrides
 
 class middridesTests: XCTestCase {
@@ -54,6 +55,28 @@ class middridesTests: XCTestCase {
         //TODO: need to test the actual process of Parse checking the username/password
         //Need to try a login that is valid in terms of syntax but has wrong password
         
+    }
+    
+    func testVanRequest() {
+        let query = PFQuery(className: "UserRequest")
+        var count = -1
+        do {
+            let objects = try query.findObjects()
+            count = objects.count
+        } catch _ {
+            XCTAssert(false)
+        }
+        let vrView = VanRequestViewController()
+        vrView.requestButtonPressed(UIButton())
+        sleep(1) // wait for asynchronous part of requestButtonPressed() to finish
+        var newCount = -1
+        do {
+            let objects = try query.findObjects()
+            newCount = objects.count
+        } catch _ {
+            XCTAssert(false)
+        }
+        XCTAssertEqual(count, newCount-1)
     }
     
 }
