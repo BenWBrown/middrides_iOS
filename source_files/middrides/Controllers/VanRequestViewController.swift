@@ -50,7 +50,7 @@ class VanRequestViewController: UIViewController, UIPickerViewDataSource, UIPick
         if let user = PFUser.currentUser() {
             let request = PFObject(className: "UserRequest")
             user["PendingRequest"] = true
-            //request["objectId"] = "someId"
+            request["UserId"] = user.objectId
             if let _ = locationPickerView { //locationPickerView might be nil in testing
                 let locationName = self.vanStops[self.locationPickerView.selectedRowInComponent(0)]["LocationName"]
                 request["Location_Name"] = locationName
@@ -62,6 +62,7 @@ class VanRequestViewController: UIViewController, UIPickerViewDataSource, UIPick
             request.saveInBackgroundWithBlock() { (success: Bool, error: NSError?) in
                 //TODO: handle callback
                 if success {
+                    user.saveInBackground()
                     //display success message
                 } else {
                     //do something with error

@@ -35,6 +35,8 @@
 		B55C4CB41BC3113100907323 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55C4CB21BC3113100907323 /* LaunchScreen.storyboard */; };
 		B55C4CBF1BC3113200907323 /* middridesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C4CBE1BC3113200907323 /* middridesTests.swift */; };
 		B55C4CCA1BC3113200907323 /* middridesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C4CC91BC3113200907323 /* middridesUITests.swift */; };
+		B5CFDBD21BE18A16008FD203 /* VanRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CFDBD11BE18A16008FD203 /* VanRequestViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		B5CFDBD31BE18A16008FD203 /* VanRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CFDBD11BE18A16008FD203 /* VanRequestViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,7 @@
 		B55C4CC51BC3113200907323 /* middridesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = middridesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55C4CC91BC3113200907323 /* middridesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = middridesUITests.swift; sourceTree = "<group>"; };
 		B55C4CCB1BC3113200907323 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5CFDBD11BE18A16008FD203 /* VanRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VanRequestViewController.swift; path = Controllers/VanRequestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,7 @@
 			children = (
 				B52CED6C1BC31240007ABADB /* LoginViewController.swift */,
 				B52CED6D1BC31240007ABADB /* RegisterViewController.swift */,
+				B5CFDBD11BE18A16008FD203 /* VanRequestViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -328,6 +332,7 @@
 			files = (
 				B52CED711BC31240007ABADB /* RegisterViewController.swift in Sources */,
 				B52CED6E1BC31240007ABADB /* LoginViewController.swift in Sources */,
+				B5CFDBD21BE18A16008FD203 /* VanRequestViewController.swift in Sources */,
 				B55C4CAA1BC3113100907323 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +343,7 @@
 			files = (
 				B52CED721BC31240007ABADB /* RegisterViewController.swift in Sources */,
 				B52CED6F1BC31240007ABADB /* LoginViewController.swift in Sources */,
+				B5CFDBD31BE18A16008FD203 /* VanRequestViewController.swift in Sources */,
 				B55C4CBF1BC3113200907323 /* middridesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
