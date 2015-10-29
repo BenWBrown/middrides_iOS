@@ -32,7 +32,7 @@ class VanRequestViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return vanStops[row]["LocationName"] as? String
+        return vanStops[row]["locationName"] as? String
     }
     
     func loadVanStops(){
@@ -49,13 +49,13 @@ class VanRequestViewController: UIViewController, UIPickerViewDataSource, UIPick
     @IBAction func requestButtonPressed(sender: UIButton) {
         if let user = PFUser.currentUser() {
             let request = PFObject(className: "UserRequest")
-            user["PendingRequest"] = true
+            user["pendingRequest"] = true
             request["UserId"] = user.objectId
             if let _ = locationPickerView { //locationPickerView might be nil in testing
-                let locationName = self.vanStops[self.locationPickerView.selectedRowInComponent(0)]["LocationName"]
-                request["Location_Name"] = locationName
+                let locationName = self.vanStops[self.locationPickerView.selectedRowInComponent(0)]["locationName"]
+                request["locationName"] = locationName
             } else {
-                request["Location_Name"] = "No location selected"
+                request["locationName"] = "No location selected"
             }
             request["RequestTime"] = NSDate(timeIntervalSinceNow: NSTimeInterval(0))
             request["UserEmail"] = user["email"]
