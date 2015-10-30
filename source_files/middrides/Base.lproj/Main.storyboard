@@ -321,7 +321,6 @@
                                 <state key="normal" title="REQUEST VAN"/>
                                 <connections>
                                     <action selector="requestButtonPressed:" destination="dCS-zX-UqF" eventType="touchUpInside" id="a36-3d-65W"/>
-                                    <segue destination="yag-1n-igI" kind="show" id="Yxu-yp-zuu"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V9U-HW-lEu">
@@ -342,11 +341,47 @@
                     </view>
                     <connections>
                         <outlet property="locationPickerView" destination="V9U-HW-lEu" id="jF5-Ya-pkj"/>
+                        <outlet property="vanRequestButton" destination="Mot-ov-kRv" id="6DI-iB-Y5J"/>
+                        <segue destination="yag-1n-igI" kind="show" identifier="vanRequestViewToConfirmationView" id="IKH-DT-8gT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="18Q-Uo-VQM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="380" y="1082"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="T8D-Oh-hCV">
+            <objects>
+                <viewController id="Uay-RM-koT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="44O-of-tXW"/>
+                        <viewControllerLayoutGuide type="bottom" id="dLa-yQ-yqZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="t2Q-41-RcU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Van Status View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAD-rI-zel">
+                                <rect key="frame" x="238" y="157" width="124" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVW-dF-K7q">
+                                <rect key="frame" x="231" y="248" width="138" height="30"/>
+                                <state key="normal" title="Cancel Van Request"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZAD-rI-zel" firstAttribute="centerX" secondItem="t2Q-41-RcU" secondAttribute="centerX" id="YWr-jU-c8R"/>
+                            <constraint firstItem="ZAD-rI-zel" firstAttribute="top" secondItem="44O-of-tXW" secondAttribute="bottom" constant="137" id="zk9-vI-ilM"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Zb-Dx-wGY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1092" y="1820"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2dk-2f-oVq">
@@ -372,7 +407,7 @@
                                 <animations/>
                                 <state key="normal" title="Request another van"/>
                                 <connections>
-                                    <segue destination="dCS-zX-UqF" kind="show" id="gr0-Kd-a4N"/>
+                                    <segue destination="Uay-RM-koT" kind="show" id="PQh-Qk-bCs"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -382,7 +417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M2J-3o-UH7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="356" y="1819"/>
+            <point key="canvasLocation" x="380" y="1820"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="qvE-de-9Ow">
@@ -422,8 +457,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="i4z-Z7-o8b"/>
         <segue reference="KoV-Sw-lc7"/>
+        <segue reference="i4z-Z7-o8b"/>
         <segue reference="yc0-0m-zcl"/>
     </inferredMetricsTieBreakers>
 </document>

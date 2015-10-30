@@ -13,6 +13,7 @@ class VanRequestViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     
     @IBOutlet weak var locationPickerView: UIPickerView!
+    @IBOutlet weak var vanRequestButton: UIButton!
     
     var vanStops = [PFObject]()
     
@@ -48,6 +49,7 @@ class VanRequestViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     @IBAction func requestButtonPressed(sender: UIButton) {
         if let user = PFUser.currentUser() {
+            vanRequestButton.setTitle("Requesting...", forState: .Normal)
             let request = PFObject(className: "UserRequest")
             user["pendingRequest"] = true
             request["UserId"] = user.objectId
@@ -63,11 +65,13 @@ class VanRequestViewController: UIViewController, UIPickerViewDataSource, UIPick
                 //TODO: handle callback
                 if success {
                     user.saveInBackground()
+                    self.performSegueWithIdentifier("vanRequestViewToConfirmationView", sender: self)
                     //display success message
                 } else {
                     //do something with error
                 }
             }
+            
         }
     }
 }
