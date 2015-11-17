@@ -13,6 +13,7 @@ class VanRequestViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     @IBOutlet weak var locationPickerView: UIPickerView!
     @IBOutlet weak var vanRequestButton: UIButton!
+    @IBOutlet weak var userLocationPickerView: UIPickerView!
     
     var vanStops = [PFObject]()
     
@@ -20,6 +21,8 @@ class VanRequestViewController: UIViewController, UIPickerViewDataSource, UIPick
         super.viewDidLoad()
         locationPickerView.delegate = self
         locationPickerView.dataSource = self
+        userLocationPickerView.delegate = self
+        userLocationPickerView.dataSource = self
         loadVanStops()
     }
     
@@ -41,6 +44,7 @@ class VanRequestViewController: UIViewController, UIPickerViewDataSource, UIPick
             if let unwrappedObjects = objects {
                 self.vanStops = unwrappedObjects
                 self.locationPickerView.reloadAllComponents()
+                self.userLocationPickerView.reloadAllComponents()
             }
             //TODO: ERROR HANDLING
         }
@@ -60,6 +64,12 @@ class VanRequestViewController: UIViewController, UIPickerViewDataSource, UIPick
                 request["locationName"] = locationName
             } else {
                 request["locationName"] = "No location selected"
+            }
+            if let _ = userLocationPickerView { //userLocationPickerView might be nil in testing
+                let userLocationName = self.vanStops[self.userLocationPickerView.selectedRowInComponent(0)]["locationName"]
+                request["userLocation"] = userLocationName
+            } else {
+                request["userLocation"] = "No location selected"
             }
             request["RequestTime"] = NSDate(timeIntervalSinceNow: NSTimeInterval(0))
             request["UserEmail"] = user["email"]

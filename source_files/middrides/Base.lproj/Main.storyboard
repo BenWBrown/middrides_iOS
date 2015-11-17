@@ -301,13 +301,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbO-Yr-odY">
-                                <rect key="frame" x="261" y="163" width="78" height="21"/>
+                                <rect key="frame" x="261" y="97" width="78" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VzU-c4-XIp">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VzU-c4-XIp">
                                 <rect key="frame" x="276" y="59" width="48" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Logout"/>
@@ -316,7 +316,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mot-ov-kRv">
-                                <rect key="frame" x="249" y="422" width="102" height="30"/>
+                                <rect key="frame" x="249" y="527" width="102" height="30"/>
                                 <animations/>
                                 <state key="normal" title="REQUEST VAN"/>
                                 <connections>
@@ -324,23 +324,32 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V9U-HW-lEu">
-                                <rect key="frame" x="140" y="192" width="320" height="216"/>
+                                <rect key="frame" x="140" y="303" width="320" height="216"/>
                                 <animations/>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TTi-lv-g1q">
+                                <rect key="frame" x="0.0" y="126" width="600" height="216"/>
                             </pickerView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="TTi-lv-g1q" firstAttribute="leading" secondItem="6CL-dK-EzS" secondAttribute="leading" id="6pm-qr-9gB"/>
                             <constraint firstItem="pbO-Yr-odY" firstAttribute="centerX" secondItem="6CL-dK-EzS" secondAttribute="centerX" id="BHn-Mi-6Nn"/>
                             <constraint firstItem="V9U-HW-lEu" firstAttribute="centerX" secondItem="6CL-dK-EzS" secondAttribute="centerX" id="JXg-1h-nmX"/>
-                            <constraint firstItem="V9U-HW-lEu" firstAttribute="centerY" secondItem="6CL-dK-EzS" secondAttribute="centerY" id="Ki4-Dv-1f1"/>
-                            <constraint firstItem="V9U-HW-lEu" firstAttribute="top" secondItem="pbO-Yr-odY" secondAttribute="bottom" constant="8" id="OUO-XS-u6T"/>
+                            <constraint firstItem="TTi-lv-g1q" firstAttribute="top" secondItem="VzU-c4-XIp" secondAttribute="bottom" constant="37" id="JZ9-yT-rFv"/>
+                            <constraint firstItem="V9U-HW-lEu" firstAttribute="centerY" secondItem="6CL-dK-EzS" secondAttribute="centerY" constant="111" id="Ki4-Dv-1f1"/>
+                            <constraint firstItem="V9U-HW-lEu" firstAttribute="top" secondItem="pbO-Yr-odY" secondAttribute="bottom" constant="185" id="OUO-XS-u6T"/>
                             <constraint firstItem="Mot-ov-kRv" firstAttribute="centerX" secondItem="6CL-dK-EzS" secondAttribute="centerX" id="PYJ-hs-2K1"/>
-                            <constraint firstItem="Mot-ov-kRv" firstAttribute="top" secondItem="V9U-HW-lEu" secondAttribute="bottom" constant="14" id="zq2-My-zlw"/>
+                            <constraint firstItem="TTi-lv-g1q" firstAttribute="centerX" secondItem="6CL-dK-EzS" secondAttribute="centerX" id="SxA-sh-UsS"/>
+                            <constraint firstItem="VzU-c4-XIp" firstAttribute="top" secondItem="fOy-PY-2ak" secondAttribute="bottom" constant="39" id="qBl-sP-Br9"/>
+                            <constraint firstItem="VzU-c4-XIp" firstAttribute="centerX" secondItem="pbO-Yr-odY" secondAttribute="centerX" id="yp1-gB-XAR"/>
+                            <constraint firstItem="Mot-ov-kRv" firstAttribute="top" secondItem="V9U-HW-lEu" secondAttribute="bottom" constant="8" id="zq2-My-zlw"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="locationPickerView" destination="V9U-HW-lEu" id="jF5-Ya-pkj"/>
+                        <outlet property="userLocationPickerView" destination="TTi-lv-g1q" id="UF0-tV-2Wf"/>
                         <outlet property="vanRequestButton" destination="Mot-ov-kRv" id="6DI-iB-Y5J"/>
                         <segue destination="yag-1n-igI" kind="show" identifier="vanRequestViewToConfirmationView" id="IKH-DT-8gT"/>
                     </connections>
