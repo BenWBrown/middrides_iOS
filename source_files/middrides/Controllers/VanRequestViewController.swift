@@ -11,9 +11,6 @@ import Parse
 
 class VanRequestViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    let TIME_OUT = 300.0
-    
-    
     @IBOutlet weak var locationPickerView: UIPickerView!
     @IBOutlet weak var vanRequestButton: UIButton!
     
@@ -50,39 +47,32 @@ class VanRequestViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     
     @IBAction func requestButtonPressed(sender: UIButton) {
-        var timeSinceLastRequest = NSTimeInterval(TIME_OUT + 1)
-        let dateNow = NSDate(timeIntervalSinceNow: 0)
-        if let dateSinceLastRequest = NSUserDefaults.standardUserDefaults().objectForKey("dateSinceLastRequest") as? NSDate {
-            timeSinceLastRequest = dateNow.timeIntervalSinceDate(dateSinceLastRequest)
-        }
-        if Double(timeSinceLastRequest) > TIME_OUT {
+        if let user = PFUser.currentUser() {
+            let dateNow = NSDate(timeIntervalSinceNow: 0)
             NSUserDefaults.standardUserDefaults().setObject(dateNow, forKey: "dateSinceLastRequest")
-            if let user = PFUser.currentUser() {
-                vanRequestButton.setTitle("Requesting...", forState: .Normal)
-                let request = PFObject(className: "UserRequest")
-                user["pendingRequest"] = true
-                request["UserId"] = user.objectId
-                if let _ = locationPickerView { //locationPickerView might be nil in testing
-                    let locationName = self.vanStops[self.locationPickerView.selectedRowInComponent(0)]["locationName"]
-                    request["locationName"] = locationName
+            NSUserDefaults.standardUserDefaults().synchronize()
+            vanRequestButton.setTitle("Requesting...", forState: .Normal)
+            let request = PFObject(className: "UserRequest")
+            user["pendingRequest"] = true
+            request["UserId"] = user.objectId
+            if let _ = locationPickerView { //locationPickerView might be nil in testing
+                let locationName = self.vanStops[self.locationPickerView.selectedRowInComponent(0)]["locationName"]
+                request["locationName"] = locationName
+            } else {
+                request["locationName"] = "No location selected"
+            }
+            request["RequestTime"] = NSDate(timeIntervalSinceNow: NSTimeInterval(0))
+            request["UserEmail"] = user["email"]
+            request.saveInBackgroundWithBlock() { (success: Bool, error: NSError?) in
+                //TODO: handle callback
+                if success {
+                    user.saveInBackground()
+                    self.performSegueWithIdentifier("vanRequestViewToConfirmationView", sender: self)
+                    //display success message
                 } else {
-                    request["locationName"] = "No location selected"
-                }
-                request["RequestTime"] = NSDate(timeIntervalSinceNow: NSTimeInterval(0))
-                request["UserEmail"] = user["email"]
-                request.saveInBackgroundWithBlock() { (success: Bool, error: NSError?) in
-                    //TODO: handle callback
-                    if success {
-                        user.saveInBackground()
-                        self.performSegueWithIdentifier("vanRequestViewToConfirmationView", sender: self)
-                        //display success message
-                    } else {
-                        //do something with error
-                    }
+                    //do something with error
                 }
             }
-        } else {
-            //TODO: HANDLE TIME OUT REJECTION
         }
     }
 }

@@ -170,8 +170,8 @@
                         <outlet property="Password" destination="25z-tq-0cZ" id="bVp-tu-ove"/>
                         <outlet property="Username" destination="AQK-xZ-3iI" id="xqa-Jg-AAh"/>
                         <segue destination="Po5-rz-TDd" kind="show" identifier="loginViewToAnnouncementView" id="fCD-Kw-uw1"/>
-                        <segue destination="dCS-zX-UqF" kind="show" identifier="loginViewToVanRequestView" id="i4z-Z7-o8b"/>
                         <segue destination="aME-Ic-zgd" kind="show" identifier="loginViewToDispatcherView" id="yc0-0m-zcl"/>
+                        <segue destination="Uay-RM-koT" kind="show" identifier="loginViewToUserView" id="npW-wF-9gM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -349,10 +349,10 @@
             </objects>
             <point key="canvasLocation" x="367" y="1075"/>
         </scene>
-        <!--View Controller-->
+        <!--User View Controller-->
         <scene sceneID="T8D-Oh-hCV">
             <objects>
-                <viewController id="Uay-RM-koT" sceneMemberID="viewController">
+                <viewController id="Uay-RM-koT" customClass="UserViewController" customModule="middrides" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="44O-of-tXW"/>
                         <viewControllerLayoutGuide type="bottom" id="dLa-yQ-yqZ"/>
@@ -361,8 +361,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Van Status View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAD-rI-zel">
-                                <rect key="frame" x="238" y="157" width="124" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="User View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAD-rI-zel">
+                                <rect key="frame" x="284" y="157" width="78" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -371,17 +371,29 @@
                                 <rect key="frame" x="231" y="248" width="138" height="30"/>
                                 <state key="normal" title="Cancel Van Request"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oao-7g-SSo">
+                                <rect key="frame" x="264" y="210" width="86" height="30"/>
+                                <state key="normal" title="Request Van"/>
+                                <connections>
+                                    <action selector="requestVanButtonPressed:" destination="Uay-RM-koT" eventType="touchUpInside" id="QNK-8R-O7b"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="oao-7g-SSo" firstAttribute="centerX" secondItem="t2Q-41-RcU" secondAttribute="centerX" id="7eM-IY-Lda"/>
+                            <constraint firstItem="oao-7g-SSo" firstAttribute="centerY" secondItem="t2Q-41-RcU" secondAttribute="centerY" constant="-80" id="KG8-2e-aGx"/>
                             <constraint firstItem="ZAD-rI-zel" firstAttribute="centerX" secondItem="t2Q-41-RcU" secondAttribute="centerX" id="YWr-jU-c8R"/>
                             <constraint firstItem="ZAD-rI-zel" firstAttribute="top" secondItem="44O-of-tXW" secondAttribute="bottom" constant="137" id="zk9-vI-ilM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="dCS-zX-UqF" kind="show" identifier="userViewToVanRequestView" id="E18-lg-eFd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Zb-Dx-wGY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1102" y="1064"/>
+            <point key="canvasLocation" x="1159" y="1046"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2dk-2f-oVq">
@@ -403,9 +415,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qR0-kM-8Tu">
-                                <rect key="frame" x="220" y="241" width="142" height="30"/>
+                                <rect key="frame" x="276" y="241" width="30" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Request another van"/>
+                                <state key="normal" title="Ok!"/>
                                 <connections>
                                     <segue destination="Uay-RM-koT" kind="show" id="PQh-Qk-bCs"/>
                                 </connections>
@@ -443,7 +455,7 @@
                                 <animations/>
                                 <state key="normal" title="OK"/>
                                 <connections>
-                                    <segue destination="dCS-zX-UqF" kind="show" id="dfp-Hv-zGS"/>
+                                    <segue destination="Uay-RM-koT" kind="show" id="vEf-lC-ord"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -458,7 +470,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="KoV-Sw-lc7"/>
-        <segue reference="i4z-Z7-o8b"/>
+        <segue reference="PQh-Qk-bCs"/>
         <segue reference="yc0-0m-zcl"/>
     </inferredMetricsTieBreakers>
 </document>

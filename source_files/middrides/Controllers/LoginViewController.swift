@@ -60,7 +60,7 @@ class LoginViewController: UIViewController {
                 if self.checkAnnouncment() {
                     self.performSegueWithIdentifier("loginViewToAnnouncementView", sender: self)
                 } else {
-                    self.performSegueWithIdentifier("loginViewToVanRequestView", sender: self)
+                    self.performSegueWithIdentifier("loginViewToUserView", sender: self)
                 }
                 
             case .Dispatcher:
