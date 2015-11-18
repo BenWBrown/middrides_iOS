@@ -10,7 +10,7 @@ import UIKit
 
 class UserViewController: UIViewController {
 
-    let TIME_OUT = 300.0
+    let TIME_OUT = 00.0
     
     override func viewDidLoad() {
         super.viewDidLoad()

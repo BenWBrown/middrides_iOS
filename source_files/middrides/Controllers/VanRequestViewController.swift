@@ -35,11 +35,11 @@ class VanRequestViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return vanStops[row]["locationName"] as? String
+        return vanStops[row]["name"] as? String
     }
     
     func loadVanStops(){
-        let query = PFQuery(className: "MiddRidesLocations")
+        let query = PFQuery(className: "Location")
         query.findObjectsInBackgroundWithBlock() { (objects: [PFObject]?, error: NSError?) -> Void in
             if let unwrappedObjects = objects {
                 self.vanStops = unwrappedObjects
@@ -58,21 +58,21 @@ class VanRequestViewController: UIViewController, UIPickerViewDataSource, UIPick
             vanRequestButton.setTitle("Requesting...", forState: .Normal)
             let request = PFObject(className: "UserRequest")
             user["pendingRequest"] = true
-            request["UserId"] = user.objectId
+            request["userId"] = user.objectId
             if let _ = locationPickerView { //locationPickerView might be nil in testing
-                let locationName = self.vanStops[self.locationPickerView.selectedRowInComponent(0)]["locationName"]
-                request["locationName"] = locationName
+                let locationName = self.vanStops[self.locationPickerView.selectedRowInComponent(0)]["name"]
+                request["dstLocation"] = locationName
             } else {
-                request["locationName"] = "No location selected"
+                request["dstLocation"] = "No location selected"
             }
             if let _ = userLocationPickerView { //userLocationPickerView might be nil in testing
-                let userLocationName = self.vanStops[self.userLocationPickerView.selectedRowInComponent(0)]["locationName"]
-                request["userLocation"] = userLocationName
+                let userLocationName = self.vanStops[self.userLocationPickerView.selectedRowInComponent(0)]["name"]
+                request["pickUpLocation"] = userLocationName
             } else {
-                request["userLocation"] = "No location selected"
+                request["pickUpLocation"] = "No location selected"
             }
-            request["RequestTime"] = NSDate(timeIntervalSinceNow: NSTimeInterval(0))
-            request["UserEmail"] = user["email"]
+            request["requestTime"] = NSDate(timeIntervalSinceNow: NSTimeInterval(0))
+            request["email"] = user["email"]
             request.saveInBackgroundWithBlock() { (success: Bool, error: NSError?) in
                 //TODO: handle callback
                 if success {
