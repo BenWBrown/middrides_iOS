@@ -379,6 +379,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVW-dF-K7q">
                                 <rect key="frame" x="231" y="248" width="138" height="30"/>
                                 <state key="normal" title="Cancel Van Request"/>
+                                <connections>
+                                    <action selector="cancelRequestButtonPressed:" destination="Uay-RM-koT" eventType="touchUpInside" id="3n4-FR-rhN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oao-7g-SSo">
                                 <rect key="frame" x="264" y="210" width="86" height="30"/>

@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("II5Qw9I5WQ5Ezo9mL8TdYj3mEoiSFcdt8GFMAgsm",
             clientKey: "EIepTgb590NQw5DDu1EccT7YvprP2ovLesj1t3Nd");
         
+        //TODO: ADD CHECK DATA VERSION
+        
         return true
     }
 
