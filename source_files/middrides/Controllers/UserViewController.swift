@@ -12,6 +12,9 @@ import Parse
 class UserViewController: UIViewController {
 
     let TIME_OUT = 000.0
+    let ERROR_TITLE = "ERROR"
+    let ERROR_MESSAGE = "Time-out message"
+    let ACTION_TITLE = "OK"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +42,10 @@ class UserViewController: UIViewController {
         if checkTimeOut() {
             self.performSegueWithIdentifier("userViewToVanRequestView", sender: self)
         } else {
-            //TODO: POP SOME ERROR MESSAGE
+            let alertController = UIAlertController(title: ERROR_TITLE, message: ERROR_MESSAGE, preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: ACTION_TITLE, style: .Default, handler: nil)
+            alertController.addAction(okAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
 
