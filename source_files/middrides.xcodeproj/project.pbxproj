@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		317F45C61BFC3745008DC1FD /* PushResponseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317F45C51BFC3745008DC1FD /* PushResponseController.swift */; };
 		3198E2C61BDB090400299E8D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3198E2C41BDB090400299E8D /* Bolts.framework */; };
 		3198E2C71BDB090400299E8D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3198E2C41BDB090400299E8D /* Bolts.framework */; };
 		3198E2C81BDB090400299E8D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3198E2C41BDB090400299E8D /* Bolts.framework */; };
@@ -35,9 +36,9 @@
 		B55C4CB41BC3113100907323 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55C4CB21BC3113100907323 /* LaunchScreen.storyboard */; };
 		B55C4CBF1BC3113200907323 /* middridesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C4CBE1BC3113200907323 /* middridesTests.swift */; };
 		B55C4CCA1BC3113200907323 /* middridesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C4CC91BC3113200907323 /* middridesUITests.swift */; };
-		B5CFDBD21BE18A16008FD203 /* VanRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CFDBD11BE18A16008FD203 /* VanRequestViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		B5CFDBD31BE18A16008FD203 /* VanRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CFDBD11BE18A16008FD203 /* VanRequestViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		B5E9C0AC1BFBD2A000C97185 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E9C0AB1BFBD2A000C97185 /* UserViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		B5CFDBD21BE18A16008FD203 /* VanRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CFDBD11BE18A16008FD203 /* VanRequestViewController.swift */; };
+		B5CFDBD31BE18A16008FD203 /* VanRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CFDBD11BE18A16008FD203 /* VanRequestViewController.swift */; };
+		B5E9C0AC1BFBD2A000C97185 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E9C0AB1BFBD2A000C97185 /* UserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		317F45C51BFC3745008DC1FD /* PushResponseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushResponseController.swift; sourceTree = "<group>"; };
 		3198E2C41BDB090400299E8D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		3198E2C51BDB090400299E8D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		3198E2CC1BDB095000299E8D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -177,6 +179,7 @@
 			children = (
 				B52CED741BC3125A007ABADB /* Controllers */,
 				B55C4CA91BC3113100907323 /* AppDelegate.swift */,
+				317F45C51BFC3745008DC1FD /* PushResponseController.swift */,
 				B55C4CAD1BC3113100907323 /* Main.storyboard */,
 				B55C4CB01BC3113100907323 /* Assets.xcassets */,
 				B55C4CB21BC3113100907323 /* LaunchScreen.storyboard */,
@@ -333,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				317F45C61BFC3745008DC1FD /* PushResponseController.swift in Sources */,
 				B52CED711BC31240007ABADB /* RegisterViewController.swift in Sources */,
 				B5E9C0AC1BFBD2A000C97185 /* UserViewController.swift in Sources */,
 				B52CED6E1BC31240007ABADB /* LoginViewController.swift in Sources */,
