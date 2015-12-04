@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import Parse
 
 class UserViewController: UIViewController {
 
-    let TIME_OUT = 300.0
+    let TIME_OUT = 000.0
+    let ERROR_TITLE = "ERROR"
+    let ERROR_MESSAGE = "Time-out message"
+    let ACTION_TITLE = "OK"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +27,7 @@ class UserViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //function that checks if the user has made a request in the past 300 seconds
     func checkTimeOut() -> Bool {
         var timeSinceLastRequest = NSTimeInterval(TIME_OUT + 1)
         let dateNow = NSDate(timeIntervalSinceNow: 0)
@@ -37,10 +42,31 @@ class UserViewController: UIViewController {
         if checkTimeOut() {
             self.performSegueWithIdentifier("userViewToVanRequestView", sender: self)
         } else {
-            //TODO: POP SOME ERROR MESSAGE
+            let alertController = UIAlertController(title: ERROR_TITLE, message: ERROR_MESSAGE, preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: ACTION_TITLE, style: .Default, handler: nil)
+            alertController.addAction(okAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
 
+    @IBAction func cancelRequestButtonPressed(sender: UIButton) {
+        if let user = PFUser.currentUser() {
+            user["pendingRequest"] = false
+            if let userId = user.objectId {
+                let query = PFQuery(className: "UserRequest")
+                query.whereKey("userId", equalTo: userId)
+                query.findObjectsInBackgroundWithBlock() { (objects: [PFObject]?, error: NSError?) -> Void in
+                    if let unwrappedObjects = objects {
+                        for object in unwrappedObjects {
+                            object.deleteEventually()
+                        }
+                    }
+                }
+            }
+            user.saveInBackground()
+            //TODO: make UI react
+        }
+    }
     /*
     // MARK: - Navigation
 
