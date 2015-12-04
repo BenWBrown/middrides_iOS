@@ -14,6 +14,7 @@ import Bolts
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var pushRespController:PushResponseController?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -23,7 +24,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("II5Qw9I5WQ5Ezo9mL8TdYj3mEoiSFcdt8GFMAgsm",
             clientKey: "EIepTgb590NQw5DDu1EccT7YvprP2ovLesj1t3Nd");
         
-        //TODO: ADD CHECK DATA VERSION
+        self.pushRespController = PushResponseController();
+        
+        /*
+        if (application.respondsToSelector("registerUserNotificationSettings:")){
+            //if iOS8+
+            
+            let types:UIUserNotificationType = (.Alert | .Badge | .Sound);
+            let settings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: types, categories: nil);
+            application.registerUserNotificationSettings(settings);
+            application.registerForRemoteNotifications();
+        } else {
+            application.registerForRemoteNotificationTypes(.Alert | .Badge | .Sound);
+        }
+        */
         
         return true
     }
@@ -49,7 +63,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
 
 }
 
