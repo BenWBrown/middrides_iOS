@@ -46,6 +46,7 @@ class UserViewController: UIViewController {
             let okAction = UIAlertAction(title: ACTION_TITLE, style: .Default, handler: nil)
             alertController.addAction(okAction)
             self.presentViewController(alertController, animated: true, completion: nil)
+            //PFPush.subscribeToChannelInBackground(<#T##channel: String##String#>)
         }
     }
 

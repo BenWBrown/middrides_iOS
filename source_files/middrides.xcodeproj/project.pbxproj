@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		316477791C108EF60095348A /* VanRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316477781C108EF60095348A /* VanRequestViewController.swift */; };
 		3164777B1C10B0A00095348A /* LocationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3164777A1C10B0A00095348A /* LocationStatus.swift */; };
 		317F45C61BFC3745008DC1FD /* PushResponseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317F45C51BFC3745008DC1FD /* PushResponseController.swift */; };
 		3198E2C61BDB090400299E8D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3198E2C41BDB090400299E8D /* Bolts.framework */; };
@@ -26,6 +25,7 @@
 		3198E2DB1BDB098D00299E8D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3198E2DA1BDB098D00299E8D /* SystemConfiguration.framework */; };
 		3198E2DD1BDB099F00299E8D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3198E2DC1BDB099F00299E8D /* libz.tbd */; };
 		3198E2DF1BDB09AE00299E8D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3198E2DE1BDB09AE00299E8D /* libsqlite3.tbd */; };
+		319F257D1C55825500C10727 /* PassengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319F257C1C55825500C10727 /* PassengerViewController.swift */; };
 		B52CED6E1BC31240007ABADB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52CED6C1BC31240007ABADB /* LoginViewController.swift */; };
 		B52CED6F1BC31240007ABADB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52CED6C1BC31240007ABADB /* LoginViewController.swift */; };
 		B52CED701BC31240007ABADB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52CED6C1BC31240007ABADB /* LoginViewController.swift */; };
@@ -59,7 +59,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		316477781C108EF60095348A /* VanRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VanRequestViewController.swift; path = ../../../../.Trash/VanRequestViewController.swift; sourceTree = "<group>"; };
 		3164777A1C10B0A00095348A /* LocationStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationStatus.swift; sourceTree = "<group>"; };
 		317F45C51BFC3745008DC1FD /* PushResponseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushResponseController.swift; sourceTree = "<group>"; };
 		3198E2C41BDB090400299E8D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -74,6 +73,7 @@
 		3198E2DA1BDB098D00299E8D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3198E2DC1BDB099F00299E8D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		3198E2DE1BDB09AE00299E8D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		319F257C1C55825500C10727 /* PassengerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PassengerViewController.swift; path = Controllers/PassengerViewController.swift; sourceTree = "<group>"; };
 		B52CED6C1BC31240007ABADB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
 		B52CED6D1BC31240007ABADB /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = Controllers/RegisterViewController.swift; sourceTree = "<group>"; };
 		B55C4CA61BC3113100907323 /* middrides.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = middrides.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,10 +135,10 @@
 		B52CED741BC3125A007ABADB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				319F257C1C55825500C10727 /* PassengerViewController.swift */,
 				B52CED6C1BC31240007ABADB /* LoginViewController.swift */,
 				B5E9C0AB1BFBD2A000C97185 /* UserViewController.swift */,
 				B52CED6D1BC31240007ABADB /* RegisterViewController.swift */,
-				316477781C108EF60095348A /* VanRequestViewController.swift */,
 				3164777A1C10B0A00095348A /* LocationStatus.swift */,
 			);
 			name = Controllers;
@@ -275,6 +275,12 @@
 				TargetAttributes = {
 					B55C4CA51BC3113100907323 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 596PXJ43BR;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					B55C4CB91BC3113200907323 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -342,9 +348,9 @@
 				B52CED711BC31240007ABADB /* RegisterViewController.swift in Sources */,
 				B5E9C0AC1BFBD2A000C97185 /* UserViewController.swift in Sources */,
 				B52CED6E1BC31240007ABADB /* LoginViewController.swift in Sources */,
-				316477791C108EF60095348A /* VanRequestViewController.swift in Sources */,
 				3164777B1C10B0A00095348A /* LocationStatus.swift in Sources */,
 				B55C4CAA1BC3113100907323 /* AppDelegate.swift in Sources */,
+				319F257D1C55825500C10727 /* PassengerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +496,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -498,6 +506,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = middleendian.middrides;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -505,6 +514,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -513,6 +524,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = middleendian.middrides;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
