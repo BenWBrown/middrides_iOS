@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,19 +17,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Middrides_iOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FsJ-6u-Hwk">
-                                <rect key="frame" x="245" y="289.5" width="110.5" height="20.5"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Van Logo White" translatesAutoresizingMaskIntoConstraints="NO" id="kGX-7B-gby">
+                                <rect key="frame" x="204" y="238" width="193" height="124"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="193" id="1lr-Kn-vVr"/>
+                                    <constraint firstAttribute="height" constant="126" id="WX8-39-Twu"/>
+                                    <constraint firstAttribute="width" secondItem="kGX-7B-gby" secondAttribute="height" multiplier="25:16" id="ucj-V9-nv9"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="WX8-39-Twu"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8pP-09-Cqg">
+                                <rect key="frame" x="261" y="498" width="79" height="102"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="h5y-dh-m8d"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Midd Rides" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ik5-Jt-9gd">
+                                <rect key="frame" x="231" y="465" width="139" height="33"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yg8-CQ-P8b">
+                                <rect key="frame" x="261" y="362" width="79" height="103"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="cBc-dy-H8T"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.10588235294117647" green="0.20784313725490194" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="FsJ-6u-Hwk" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="28a-zQ-W9C"/>
-                            <constraint firstItem="FsJ-6u-Hwk" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="FBt-66-ZX3"/>
+                            <constraint firstItem="kGX-7B-gby" firstAttribute="width" secondItem="kGX-7B-gby" secondAttribute="height" multiplier="25:16" id="0z5-Xt-yGU"/>
+                            <constraint firstItem="kGX-7B-gby" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="MBh-1P-t3I"/>
+                            <constraint firstItem="kGX-7B-gby" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="MoK-a2-ZyD"/>
+                            <constraint firstItem="Ik5-Jt-9gd" firstAttribute="top" secondItem="yg8-CQ-P8b" secondAttribute="bottom" id="OX5-o4-wUs"/>
+                            <constraint firstItem="Ik5-Jt-9gd" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ZI3-5I-wqo"/>
+                            <constraint firstItem="yg8-CQ-P8b" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="cJd-0X-fdc"/>
+                            <constraint firstItem="yg8-CQ-P8b" firstAttribute="top" secondItem="kGX-7B-gby" secondAttribute="bottom" id="f7H-Zo-1hi"/>
+                            <constraint firstItem="8pP-09-Cqg" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="kAg-cM-Sbi"/>
+                            <constraint firstItem="8pP-09-Cqg" firstAttribute="top" secondItem="Ik5-Jt-9gd" secondAttribute="bottom" id="kJ6-Qd-fMV"/>
+                            <constraint firstItem="8pP-09-Cqg" firstAttribute="height" secondItem="yg8-CQ-P8b" secondAttribute="height" id="mdQ-fP-RkU"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="8pP-09-Cqg" secondAttribute="bottom" id="xbj-Wr-lII"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,4 +77,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Van Logo White" width="1430" height="972"/>
+    </resources>
 </document>

@@ -13,6 +13,7 @@ class RegisterViewController: UIViewController {
 
     @IBOutlet weak var Username: UITextField!
     @IBOutlet weak var Password: UITextField!
+    @IBOutlet weak var ConfirmPassword: UITextField!
     
     func setInfo(username: String, password: String){
         self.Username.text = username;
@@ -32,7 +33,7 @@ class RegisterViewController: UIViewController {
     
     @IBAction func registerButtonPressed(sender: UIButton) {
         
-        if validRegisterDetails((self.Username?.text)!, password: (self.Password?.text)!) {
+        if validRegisterDetails((self.Username?.text)!, password: (self.Password?.text)!, confirm: (self.ConfirmPassword.text)!) {
             //check that username and password are valid
             
             //create user in Parse
@@ -59,7 +60,7 @@ class RegisterViewController: UIViewController {
     }
     
     //verify register credentials
-    func validRegisterDetails(username: String, password: String) -> Bool {
+    func validRegisterDetails(username: String, password: String, confirm: String) -> Bool {
         
         //TODO: give notice if username/password isn't valid
         
@@ -75,6 +76,10 @@ class RegisterViewController: UIViewController {
         if (password.characters.count < 6){
             //make sure there are 6 characters in a password
             return false;
+        }
+        
+        if password != confirm {
+            return false
         }
         
         return true;

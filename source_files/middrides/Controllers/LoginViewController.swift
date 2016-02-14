@@ -20,6 +20,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var Password: UITextField!
     @IBOutlet weak var Username: UITextField!
+    //@IBOutlet weak var backgroundImageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +40,14 @@ class LoginViewController: UIViewController {
             }
         }
         
-        
+//        //load background image
+//        let backgroundImage = UIImage.animatedImageNamed("transparent-", duration: 2.0)
+//        guard let unwrappedBackgroundImage = backgroundImage else {
+//            print("ERROR LOADING BACKGROUND IMAGE")
+//            //TODO: set background to certain color
+//            return
+//        }
+//        backgroundImageView.image = unwrappedBackgroundImage
     }
     
 
@@ -57,10 +65,21 @@ class LoginViewController: UIViewController {
             }
             switch login{
             case .User:
-                if self.checkAnnouncment() {
-                    self.performSegueWithIdentifier("loginViewToAnnouncementView", sender: self)
-                } else {
-                    self.performSegueWithIdentifier("loginViewToUserView", sender: self)
+                guard let unwrappedUser = user else {
+                    print("ERROR: NO USER")
+                    return
+                }
+                let emailVerified = unwrappedUser["emailVerified"] as! Bool
+                if emailVerified {
+                    if self.checkAnnouncment() {
+                        self.performSegueWithIdentifier("loginViewToAnnouncementView", sender: self)
+                    } else {
+                        self.performSegueWithIdentifier("loginViewToUserView", sender: self)
+                    }
+                }
+                else {
+                    print("ERROR: email not verified")
+                    //TODO: pop error notif
                 }
                 
             case .Dispatcher:
