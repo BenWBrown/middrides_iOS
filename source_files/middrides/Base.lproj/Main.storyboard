@@ -51,7 +51,7 @@
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Already Registered?">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.39982357880000002" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="registerViewToLoginView" id="iDC-LK-5mg"/>
@@ -62,7 +62,7 @@
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Let's Ride">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.39982357880000002" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="registerButtonPressed:" destination="1xs-6e-Z3g" eventType="touchUpInside" id="KGn-wW-9PK"/>
@@ -208,7 +208,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Register?">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.39982357880000002" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -228,7 +228,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Let's Ride">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.39982357876036323" green="0.66666666666666663" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9T0-vU-z15"/>
@@ -265,7 +265,7 @@
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Forgot Password?">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.39982357880000002" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="OOO-E3-D9l" kind="show" id="3qC-MM-yil"/>
@@ -466,7 +466,7 @@
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Back">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.39982357880000002" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="Uay-RM-koT" kind="show" id="pDQ-qY-bBP"/>
@@ -484,7 +484,7 @@
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Request Van">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.39982357880000002" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="RequestButtonHandler:" destination="3I3-K8-T1p" eventType="touchUpInside" id="fba-ch-1r1"/>
@@ -548,8 +548,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oao-7g-SSo">
-                                <rect key="frame" x="204" y="166" width="193" height="123.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oao-7g-SSo">
+                                <rect key="frame" x="204" y="167" width="193" height="123.5"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="193" id="Gil-wG-x6J"/>
@@ -559,7 +559,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="93" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Request a Van" backgroundImage="Van Logo White">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.39982357880000002" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -579,9 +579,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVW-dF-K7q">
-                                <rect key="frame" x="231" y="372" width="138" height="30"/>
+                                <rect key="frame" x="209" y="410" width="181" height="36"/>
                                 <animations/>
-                                <state key="normal" title="Cancel Van Request"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Cancel Van Request">
+                                    <color key="titleColor" red="0.39982357880000002" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="cancelRequestButtonPressed:" destination="Uay-RM-koT" eventType="touchUpInside" id="3n4-FR-rhN"/>
                                 </connections>
@@ -589,35 +592,61 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Byt-Hs-Czx">
                                 <rect key="frame" x="276" y="562" width="48" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Logout"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" red="0.39982357880000002" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="logoutButtonPressed:" destination="Uay-RM-koT" eventType="touchUpInside" id="oGV-Br-FVS"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="100" misplaced="YES" placeholderIntrinsicWidth="39.5" placeholderIntrinsicHeight="19.5" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XV6-VK-4gT">
+                                <rect key="frame" x="280.5" y="352" width="39.5" height="50"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="OcQ-t8-aA7"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="344" id="s6C-Ck-Clp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="OcQ-t8-aA7"/>
+                                        <exclude reference="s6C-Ck-Clp"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.10588235294117647" green="0.20784313725490194" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="tVW-dF-K7q" firstAttribute="top" secondItem="XV6-VK-4gT" secondAttribute="bottom" constant="8" id="0Ln-Mb-kcH"/>
                             <constraint firstItem="oao-7g-SSo" firstAttribute="top" secondItem="NkW-Oe-4Jf" secondAttribute="bottom" constant="10" id="4qI-MR-5uO"/>
                             <constraint firstItem="Byt-Hs-Czx" firstAttribute="centerX" secondItem="t2Q-41-RcU" secondAttribute="centerX" id="7Qn-4d-AyJ"/>
                             <constraint firstItem="oao-7g-SSo" firstAttribute="centerX" secondItem="t2Q-41-RcU" secondAttribute="centerX" id="7eM-IY-Lda"/>
+                            <constraint firstItem="XV6-VK-4gT" firstAttribute="top" secondItem="oao-7g-SSo" secondAttribute="bottom" constant="61.5" id="DPT-EU-1Aq"/>
+                            <constraint firstItem="XV6-VK-4gT" firstAttribute="centerX" secondItem="t2Q-41-RcU" secondAttribute="centerX" id="Db5-hl-SZG"/>
                             <constraint firstItem="NkW-Oe-4Jf" firstAttribute="top" secondItem="44O-of-tXW" secondAttribute="bottom" constant="20" id="GU9-kT-ft0"/>
                             <constraint firstItem="oao-7g-SSo" firstAttribute="centerY" secondItem="t2Q-41-RcU" secondAttribute="centerY" constant="-80" id="KG8-2e-aGx"/>
                             <constraint firstItem="oao-7g-SSo" firstAttribute="top" secondItem="NkW-Oe-4Jf" secondAttribute="bottom" constant="93.5" id="Vad-Ue-aWg"/>
                             <constraint firstItem="NkW-Oe-4Jf" firstAttribute="centerX" secondItem="t2Q-41-RcU" secondAttribute="centerX" id="XG2-Hu-ImW"/>
                             <constraint firstItem="tVW-dF-K7q" firstAttribute="centerX" secondItem="t2Q-41-RcU" secondAttribute="centerX" id="awH-oY-qdB"/>
+                            <constraint firstItem="XV6-VK-4gT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="t2Q-41-RcU" secondAttribute="leadingMargin" constant="30" id="dKY-Pk-rzi"/>
                             <constraint firstItem="dLa-yQ-yqZ" firstAttribute="top" secondItem="Byt-Hs-Czx" secondAttribute="bottom" constant="8" id="ipP-lY-G64"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="XV6-VK-4gT" secondAttribute="trailing" constant="30" id="o6k-mE-ian"/>
                             <constraint firstItem="tVW-dF-K7q" firstAttribute="top" secondItem="oao-7g-SSo" secondAttribute="bottom" constant="82.5" id="uqc-Gc-GvQ"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="4qI-MR-5uO"/>
                                 <exclude reference="KG8-2e-aGx"/>
+                                <exclude reference="uqc-Gc-GvQ"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="tVW-dF-K7q" id="dJR-yc-YHE"/>
+                        <outlet property="requestInfoLabel" destination="XV6-VK-4gT" id="QIO-Qa-rnM"/>
                         <outlet property="requestVanButton" destination="oao-7g-SSo" id="O1h-Vn-wg5"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="userViewToLoginView" id="2sj-G0-PWV"/>
                     </connections>
@@ -643,7 +672,7 @@
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Back">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.39982357880000002" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="resetPasswordViewToLoginView" id="T4C-x0-BkF"/>
@@ -663,21 +692,6 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyt-39-TDP">
-                                <rect key="frame" x="201.5" y="358" width="198" height="46"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="Ufv-rx-gVO"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="Reset Password">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x2U-a7-MH5"/>
-                                    <action selector="resetButtonPressed:" destination="OOO-E3-D9l" eventType="touchUpInside" id="Wpm-cb-5zg"/>
-                                </connections>
-                            </button>
                             <view hidden="YES" contentMode="scaleToFill" verticalHuggingPriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="77L-41-U4W">
                                 <rect key="frame" x="180" y="406.5" width="240" height="113.5"/>
                                 <animations/>
@@ -717,6 +731,21 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyt-39-TDP">
+                                <rect key="frame" x="201" y="358" width="198" height="46"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="Ufv-rx-gVO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Reset Password">
+                                    <color key="titleColor" red="0.39982357880000002" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x2U-a7-MH5"/>
+                                    <action selector="resetButtonPressed:" destination="OOO-E3-D9l" eventType="touchUpInside" id="Wpm-cb-5zg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.10588235294117647" green="0.20784313725490194" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
@@ -781,7 +810,7 @@
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="OK">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.39982357880000002" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="Uay-RM-koT" kind="show" id="PQh-Qk-bCs"/>
@@ -853,8 +882,8 @@
         <image name="Van Logo White" width="1430" height="972"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="npW-wF-9gM"/>
-        <segue reference="T4C-x0-BkF"/>
+        <segue reference="pDQ-qY-bBP"/>
+        <segue reference="2sj-G0-PWV"/>
         <segue reference="yc0-0m-zcl"/>
     </inferredMetricsTieBreakers>
 </document>

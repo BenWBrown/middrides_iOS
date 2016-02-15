@@ -18,15 +18,39 @@ class UserViewController: UIViewController {
     
     @IBOutlet weak var requestVanButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var requestInfoLabel: UILabel!
+    
+    var hiddenControls: Bool = false {
+        didSet {
+            cancelButton.hidden = hiddenControls
+            requestInfoLabel.hidden = hiddenControls
+            if !hiddenControls {
+                requestInfoLabel.text = "" //just in case the following fails
+                if let user = PFUser.currentUser() {
+                    if let userId = user.objectId {
+                        let query = PFQuery(className: "UserRequest")
+                        query.whereKey("userId", equalTo: userId)
+                        query.findObjectsInBackgroundWithBlock() { (objects: [PFObject]?, error: NSError?) -> Void in
+                            if let unwrappedObjects = objects {
+                                let object = unwrappedObjects[0]
+                                let name = object["pickUpLocation"] as! String
+                                self.requestInfoLabel.text = "Your van is en route to\n" + name
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let user = PFUser.currentUser() {
             if (user["pendingRequest"] as! Bool) {
-                cancelButton.hidden = false
+                hiddenControls = false
             } else {
-                cancelButton.hidden = true
+                hiddenControls = true
             }
         }
 
@@ -102,7 +126,7 @@ class UserViewController: UIViewController {
         let alertController = UIAlertController(title: "test", message: "test", preferredStyle: .Alert)
         alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
         self.presentViewController(alertController, animated: false, completion: nil)
-        cancelButton.hidden = true
+        hiddenControls = true
         //TODO: make UI react
     }
     
