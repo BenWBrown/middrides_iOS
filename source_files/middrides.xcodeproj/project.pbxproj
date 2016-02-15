@@ -38,6 +38,7 @@
 		B55C4CB41BC3113100907323 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55C4CB21BC3113100907323 /* LaunchScreen.storyboard */; };
 		B55C4CBF1BC3113200907323 /* middridesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C4CBE1BC3113200907323 /* middridesTests.swift */; };
 		B55C4CCA1BC3113200907323 /* middridesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C4CC91BC3113200907323 /* middridesUITests.swift */; };
+		B5CEAD701C72162600101CED /* resetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CEAD6F1C72162600101CED /* resetPasswordViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B5E9C0AC1BFBD2A000C97185 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E9C0AB1BFBD2A000C97185 /* UserViewController.swift */; };
 		B5F4E6241C7154F700D12FBA /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4E6231C7154F700D12FBA /* ConfirmationViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -89,6 +90,7 @@
 		B55C4CC51BC3113200907323 /* middridesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = middridesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55C4CC91BC3113200907323 /* middridesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = middridesUITests.swift; sourceTree = "<group>"; };
 		B55C4CCB1BC3113200907323 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5CEAD6F1C72162600101CED /* resetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = resetPasswordViewController.swift; path = Controllers/resetPasswordViewController.swift; sourceTree = "<group>"; };
 		B5E9C0AB1BFBD2A000C97185 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserViewController.swift; path = Controllers/UserViewController.swift; sourceTree = "<group>"; };
 		B5F4E6231C7154F700D12FBA /* ConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfirmationViewController.swift; path = Controllers/ConfirmationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,6 +139,7 @@
 		B52CED741BC3125A007ABADB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B5CEAD6F1C72162600101CED /* resetPasswordViewController.swift */,
 				319F257C1C55825500C10727 /* PassengerViewController.swift */,
 				B52CED6C1BC31240007ABADB /* LoginViewController.swift */,
 				B5E9C0AB1BFBD2A000C97185 /* UserViewController.swift */,
@@ -350,6 +353,7 @@
 				317F45C61BFC3745008DC1FD /* PushResponseController.swift in Sources */,
 				B52CED711BC31240007ABADB /* RegisterViewController.swift in Sources */,
 				B5E9C0AC1BFBD2A000C97185 /* UserViewController.swift in Sources */,
+				B5CEAD701C72162600101CED /* resetPasswordViewController.swift in Sources */,
 				B52CED6E1BC31240007ABADB /* LoginViewController.swift in Sources */,
 				3164777B1C10B0A00095348A /* LocationStatus.swift in Sources */,
 				B55C4CAA1BC3113100907323 /* AppDelegate.swift in Sources */,

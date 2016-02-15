@@ -124,9 +124,10 @@ class LoginViewController: UIViewController {
     }
     
     
-    @IBAction func resetPasswordButtonPressed(sender: AnyObject) {
-        //TODO: SHERIF DO CODE HERE!
-    }
+//    @IBAction func resetPasswordButtonPressed(sender: AnyObject) {
+//        //TODO: SHERIF DO CODE HERE!
+//        //just kidding, shouldn't need any code here
+//    }
     
 
     /*
