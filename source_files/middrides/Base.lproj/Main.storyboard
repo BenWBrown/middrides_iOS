@@ -658,7 +658,7 @@
         <!--Reset Password View Controller-->
         <scene sceneID="W2K-mY-SOc">
             <objects>
-                <viewController id="OOO-E3-D9l" customClass="resetPasswordViewController" customModule="middrides" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OOO-E3-D9l" customClass="ResetPasswordViewController" customModule="middrides" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VzC-9m-2h7"/>
                         <viewControllerLayoutGuide type="bottom" id="BWO-nP-t7z"/>
@@ -883,7 +883,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="pDQ-qY-bBP"/>
-        <segue reference="2sj-G0-PWV"/>
         <segue reference="yc0-0m-zcl"/>
+        <segue reference="T4C-x0-BkF"/>
     </inferredMetricsTieBreakers>
 </document>
