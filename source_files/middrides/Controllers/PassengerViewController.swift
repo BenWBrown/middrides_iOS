@@ -45,7 +45,7 @@ class PassengerViewController: UIViewController, UIPickerViewDataSource, UIPicke
         req.saveInBackgroundWithBlock{
             (success: Bool, error: NSError?) -> Void in
             if (success) {
-                // The object has been saved.
+                NSUserDefaults.standardUserDefaults().setObject(NSDate(timeIntervalSinceNow: 0), forKey: "dateSinceLastRequest")
             } else {
                 // There was a problem, check error.description
                 print("Error in sending Request")

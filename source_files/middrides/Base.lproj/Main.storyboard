@@ -570,7 +570,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="requestVanButtonPressed:" destination="Uay-RM-koT" eventType="touchUpInside" id="QNK-8R-O7b"/>
-                                    <segue destination="3I3-K8-T1p" kind="show" identifier="userViewToVanRequestView" id="rMt-y0-3ep"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Midd Rides" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NkW-Oe-4Jf">
@@ -885,7 +884,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="npW-wF-9gM"/>
-        <segue reference="iDC-LK-5mg"/>
+        <segue reference="2sj-G0-PWV"/>
         <segue reference="yc0-0m-zcl"/>
     </inferredMetricsTieBreakers>
 </document>
