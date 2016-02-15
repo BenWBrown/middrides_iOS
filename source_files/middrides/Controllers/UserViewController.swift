@@ -16,10 +16,20 @@ class UserViewController: UIViewController {
     let ERROR_MESSAGE = "Time-out message"
     let ACTION_TITLE = "OK"
     
+    @IBOutlet weak var requestVanButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let user = PFUser.currentUser() {
+            if (user["pendingRequest"] as! Bool) {
+                cancelButton.hidden = false
+            } else {
+                cancelButton.hidden = true
+            }
+        }
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,7 +60,12 @@ class UserViewController: UIViewController {
         }
     }
 
+    
+    //TODO: BACKEND ADJUSTMENTS
     @IBAction func cancelRequestButtonPressed(sender: UIButton) {
+        var locationID: String?
+        
+        //update Parse User and UserRequest
         if let user = PFUser.currentUser() {
             user["pendingRequest"] = false
             if let userId = user.objectId {
@@ -59,14 +74,36 @@ class UserViewController: UIViewController {
                 query.findObjectsInBackgroundWithBlock() { (objects: [PFObject]?, error: NSError?) -> Void in
                     if let unwrappedObjects = objects {
                         for object in unwrappedObjects {
+                            locationID = object["locationID"] as? String
                             object.deleteEventually()
                         }
                     }
                 }
             }
             user.saveInBackground()
-            //TODO: make UI react
         }
+        
+        //update Parse LocationStatus
+        if let unwrappedLocationID = locationID {
+            let query = PFQuery(className: "LocationStatus")
+            query.whereKey("objectId", equalTo: unwrappedLocationID)
+            query.findObjectsInBackgroundWithBlock() { (objects: [PFObject]?, error: NSError?) -> Void in
+                if let unwrappedObjects = objects {
+                    if (unwrappedObjects[0]["passengersWaiting"] as! Int) > 0 {
+                        let numPassengers = unwrappedObjects[0]["passengersWaiting"] as! Int
+                        unwrappedObjects[0]["passengersWaiting"] = numPassengers + 1
+                    }
+                    unwrappedObjects[0].saveInBackground()
+                }
+            }
+        }
+        
+        //display message
+        let alertController = UIAlertController(title: "test", message: "test", preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
+        self.presentViewController(alertController, animated: false, completion: nil)
+        cancelButton.hidden = true
+        //TODO: make UI react
     }
     /*
     // MARK: - Navigation

@@ -58,7 +58,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idt-GT-p7p">
-                                <rect key="frame" x="240" y="413" width="121" height="46"/>
+                                <rect key="frame" x="240" y="412.5" width="121" height="46"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Let's Ride">
@@ -69,7 +69,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Van Logo White" translatesAutoresizingMaskIntoConstraints="NO" id="EbI-eS-gaX">
-                                <rect key="frame" x="204" y="50" width="193" height="124"/>
+                                <rect key="frame" x="203.5" y="50" width="193" height="124"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="193" id="R8t-St-xgH"/>
@@ -83,7 +83,7 @@
                                 </variation>
                             </imageView>
                             <view hidden="YES" contentMode="scaleToFill" verticalHuggingPriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="f0d-Bh-50z">
-                                <rect key="frame" x="194" y="320" width="212" height="93"/>
+                                <rect key="frame" x="194" y="320" width="212" height="92.5"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -91,7 +91,7 @@
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" verticalHuggingPriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="CDY-2D-n8D">
-                                <rect key="frame" x="194" y="459" width="212" height="92"/>
+                                <rect key="frame" x="194" y="458.5" width="212" height="92.5"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -216,7 +216,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xod-ep-5hp">
-                                <rect key="frame" x="240" y="389" width="121" height="46"/>
+                                <rect key="frame" x="240" y="388.5" width="121" height="46"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="zxb-1U-x0a"/>
@@ -230,7 +230,7 @@
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" verticalHuggingPriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="G8f-Xg-gU0">
-                                <rect key="frame" x="180" y="438" width="240" height="106"/>
+                                <rect key="frame" x="180" y="437.5" width="240" height="106.5"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -238,7 +238,7 @@
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" verticalHuggingPriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="1jB-6r-o0s">
-                                <rect key="frame" x="245" y="282" width="111" height="107"/>
+                                <rect key="frame" x="245" y="282" width="111" height="106.5"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -396,7 +396,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some Text:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byJ-89-gri">
-                                <rect key="frame" x="142" y="289" width="86" height="21"/>
+                                <rect key="frame" x="142" y="289" width="85.5" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -489,44 +489,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="User View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAD-rI-zel">
-                                <rect key="frame" x="284" y="157" width="78" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oao-7g-SSo">
+                                <rect key="frame" x="204" y="168" width="193" height="123.5"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="193" id="Gil-wG-x6J"/>
+                                    <constraint firstAttribute="width" secondItem="oao-7g-SSo" secondAttribute="height" multiplier="25:16" id="QVS-Cn-DoK"/>
+                                    <constraint firstAttribute="height" constant="160" id="lhy-O9-LNl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="93" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Request a Van" backgroundImage="Van Logo White">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="lhy-O9-LNl"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="requestVanButtonPressed:" destination="Uay-RM-koT" eventType="touchUpInside" id="QNK-8R-O7b"/>
+                                    <segue destination="3I3-K8-T1p" kind="show" identifier="userViewToVanRequestView" id="rMt-y0-3ep"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Midd Rides" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NkW-Oe-4Jf">
+                                <rect key="frame" x="154" y="41" width="293" height="33.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVW-dF-K7q">
-                                <rect key="frame" x="254" y="248" width="138" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVW-dF-K7q">
+                                <rect key="frame" x="231" y="374" width="138" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Cancel Van Request"/>
                                 <connections>
                                     <action selector="cancelRequestButtonPressed:" destination="Uay-RM-koT" eventType="touchUpInside" id="3n4-FR-rhN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oao-7g-SSo">
-                                <rect key="frame" x="297" y="422" width="86" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Request Van"/>
-                                <connections>
-                                    <action selector="requestVanButtonPressed:" destination="Uay-RM-koT" eventType="touchUpInside" id="QNK-8R-O7b"/>
-                                    <segue destination="3I3-K8-T1p" kind="show" identifier="userViewToVanRequestView" id="rMt-y0-3ep"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.10588235294117647" green="0.20784313725490194" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="oao-7g-SSo" firstAttribute="top" secondItem="NkW-Oe-4Jf" secondAttribute="bottom" constant="10" id="4qI-MR-5uO"/>
                             <constraint firstItem="oao-7g-SSo" firstAttribute="centerX" secondItem="t2Q-41-RcU" secondAttribute="centerX" id="7eM-IY-Lda"/>
+                            <constraint firstItem="NkW-Oe-4Jf" firstAttribute="top" secondItem="44O-of-tXW" secondAttribute="bottom" constant="21" id="GU9-kT-ft0"/>
                             <constraint firstItem="oao-7g-SSo" firstAttribute="centerY" secondItem="t2Q-41-RcU" secondAttribute="centerY" constant="-80" id="KG8-2e-aGx"/>
-                            <constraint firstItem="ZAD-rI-zel" firstAttribute="centerX" secondItem="t2Q-41-RcU" secondAttribute="centerX" id="YWr-jU-c8R"/>
-                            <constraint firstItem="ZAD-rI-zel" firstAttribute="top" secondItem="44O-of-tXW" secondAttribute="bottom" constant="137" id="zk9-vI-ilM"/>
+                            <constraint firstItem="oao-7g-SSo" firstAttribute="top" secondItem="NkW-Oe-4Jf" secondAttribute="bottom" constant="93.5" id="Vad-Ue-aWg"/>
+                            <constraint firstItem="NkW-Oe-4Jf" firstAttribute="centerX" secondItem="t2Q-41-RcU" secondAttribute="centerX" id="XG2-Hu-ImW"/>
+                            <constraint firstItem="tVW-dF-K7q" firstAttribute="centerX" secondItem="t2Q-41-RcU" secondAttribute="centerX" id="awH-oY-qdB"/>
+                            <constraint firstItem="tVW-dF-K7q" firstAttribute="top" secondItem="oao-7g-SSo" secondAttribute="bottom" constant="82.5" id="uqc-Gc-GvQ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4qI-MR-5uO"/>
+                                <exclude reference="KG8-2e-aGx"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="tVW-dF-K7q" id="dJR-yc-YHE"/>
+                        <outlet property="requestVanButton" destination="oao-7g-SSo" id="O1h-Vn-wg5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Zb-Dx-wGY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1128" y="1052"/>
+            <point key="canvasLocation" x="1080" y="1080"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2dk-2f-oVq">
@@ -606,7 +634,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="iDC-LK-5mg"/>
-        <segue reference="npW-wF-9gM"/>
         <segue reference="yc0-0m-zcl"/>
+        <segue reference="pDQ-qY-bBP"/>
     </inferredMetricsTieBreakers>
 </document>

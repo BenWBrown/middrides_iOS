@@ -51,6 +51,10 @@ class PassengerViewController: UIViewController, UIPickerViewDataSource, UIPicke
                 print("Error in sending Request")
             }
         }
+        if let user = PFUser.currentUser() {
+            user["pendingRequest"] = true
+            user.saveInBackground()
+        }
     }
     
     /*---------------------
