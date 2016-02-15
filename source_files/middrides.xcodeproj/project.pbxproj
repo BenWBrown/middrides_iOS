@@ -39,6 +39,7 @@
 		B55C4CBF1BC3113200907323 /* middridesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C4CBE1BC3113200907323 /* middridesTests.swift */; };
 		B55C4CCA1BC3113200907323 /* middridesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C4CC91BC3113200907323 /* middridesUITests.swift */; };
 		B5E9C0AC1BFBD2A000C97185 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E9C0AB1BFBD2A000C97185 /* UserViewController.swift */; };
+		B5F4E6241C7154F700D12FBA /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4E6231C7154F700D12FBA /* ConfirmationViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		B55C4CC91BC3113200907323 /* middridesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = middridesUITests.swift; sourceTree = "<group>"; };
 		B55C4CCB1BC3113200907323 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5E9C0AB1BFBD2A000C97185 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserViewController.swift; path = Controllers/UserViewController.swift; sourceTree = "<group>"; };
+		B5F4E6231C7154F700D12FBA /* ConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfirmationViewController.swift; path = Controllers/ConfirmationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				B5E9C0AB1BFBD2A000C97185 /* UserViewController.swift */,
 				B52CED6D1BC31240007ABADB /* RegisterViewController.swift */,
 				3164777A1C10B0A00095348A /* LocationStatus.swift */,
+				B5F4E6231C7154F700D12FBA /* ConfirmationViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				B52CED6E1BC31240007ABADB /* LoginViewController.swift in Sources */,
 				3164777B1C10B0A00095348A /* LocationStatus.swift in Sources */,
 				B55C4CAA1BC3113100907323 /* AppDelegate.swift in Sources */,
+				B5F4E6241C7154F700D12FBA /* ConfirmationViewController.swift in Sources */,
 				319F257D1C55825500C10727 /* PassengerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -263,6 +263,14 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODt-fb-j9X">
+                                <rect key="frame" x="361" y="554" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="resetPasswordButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AAo-a4-lvV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.10588235294117647" green="0.20784313725490194" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
@@ -280,6 +288,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="AQK-xZ-3iI" secondAttribute="trailing" constant="8" id="QZn-ml-ywk"/>
                             <constraint firstItem="Xod-ep-5hp" firstAttribute="top" secondItem="1jB-6r-o0s" secondAttribute="bottom" id="Qrz-t4-ryE"/>
                             <constraint firstItem="Xod-ep-5hp" firstAttribute="top" secondItem="25z-tq-0cZ" secondAttribute="bottom" constant="12" id="T81-17-AJT"/>
+                            <constraint firstItem="ODt-fb-j9X" firstAttribute="leading" secondItem="NjD-h6-crW" secondAttribute="trailing" constant="19" id="ZD2-k9-VYc"/>
                             <constraint firstItem="NjD-h6-crW" firstAttribute="top" secondItem="G8f-Xg-gU0" secondAttribute="bottom" id="ZHh-uR-eNo"/>
                             <constraint firstItem="1jB-6r-o0s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="abR-D0-Y52"/>
                             <constraint firstItem="25z-tq-0cZ" firstAttribute="top" secondItem="AQK-xZ-3iI" secondAttribute="bottom" constant="8" id="bVg-sc-fxH"/>
@@ -556,10 +565,10 @@
             </objects>
             <point key="canvasLocation" x="1080" y="1080"/>
         </scene>
-        <!--View Controller-->
+        <!--Confirmation View Controller-->
         <scene sceneID="2dk-2f-oVq">
             <objects>
-                <viewController id="yag-1n-igI" sceneMemberID="viewController">
+                <viewController id="yag-1n-igI" customClass="ConfirmationViewController" customModule="middrides" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ej5-Rn-SFw"/>
                         <viewControllerLayoutGuide type="bottom" id="aqU-YD-g3d"/>
@@ -568,15 +577,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Confirmation View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0C-VQ-Xfn">
-                                <rect key="frame" x="230" y="177" width="141" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dfE-5r-3bt">
+                                <rect key="frame" x="20" y="20" width="560" height="580"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qR0-kM-8Tu">
-                                <rect key="frame" x="276" y="241" width="30" height="30"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qR0-kM-8Tu">
+                                <rect key="frame" x="285" y="530" width="30" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Ok!"/>
                                 <connections>
@@ -586,7 +592,18 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.10588235294117647" green="0.20784313725490194" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="dfE-5r-3bt" firstAttribute="top" secondItem="ej5-Rn-SFw" secondAttribute="bottom" id="8cb-5t-efx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dfE-5r-3bt" secondAttribute="trailing" id="A56-uv-rYr"/>
+                            <constraint firstItem="aqU-YD-g3d" firstAttribute="top" secondItem="qR0-kM-8Tu" secondAttribute="bottom" constant="40" id="F4Z-S2-lIJ"/>
+                            <constraint firstItem="aqU-YD-g3d" firstAttribute="top" secondItem="dfE-5r-3bt" secondAttribute="bottom" id="caE-P3-hcV"/>
+                            <constraint firstItem="dfE-5r-3bt" firstAttribute="leading" secondItem="Avv-B2-ejE" secondAttribute="leadingMargin" id="dQU-Pg-oYf"/>
+                            <constraint firstItem="qR0-kM-8Tu" firstAttribute="centerX" secondItem="Avv-B2-ejE" secondAttribute="centerX" id="tPz-3I-SV2"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="dfE-5r-3bt" id="BV9-LW-ztQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M2J-3o-UH7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -604,15 +621,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Announcement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Re9-iC-2wA">
-                                <rect key="frame" x="221" y="228" width="117" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jk1-kq-ncj">
-                                <rect key="frame" x="264" y="285" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jk1-kq-ncj">
+                                <rect key="frame" x="319" y="536" width="30" height="30"/>
                                 <animations/>
                                 <state key="normal" title="OK"/>
                                 <connections>
@@ -622,6 +632,10 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.10588235294117647" green="0.20784313725490194" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="AZ9-ku-cQC" firstAttribute="top" secondItem="Jk1-kq-ncj" secondAttribute="bottom" constant="34" id="GS0-nR-Wfp"/>
+                            <constraint firstItem="Jk1-kq-ncj" firstAttribute="centerX" secondItem="SfD-cf-QoR" secondAttribute="centerX" id="LLF-aD-JUF"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8f9-Y5-ovf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -635,6 +649,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="iDC-LK-5mg"/>
         <segue reference="yc0-0m-zcl"/>
-        <segue reference="pDQ-qY-bBP"/>
+        <segue reference="PQh-Qk-bCs"/>
     </inferredMetricsTieBreakers>
 </document>

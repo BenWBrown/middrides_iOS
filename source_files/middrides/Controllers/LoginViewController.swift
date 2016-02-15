@@ -39,15 +39,6 @@ class LoginViewController: UIViewController {
                 }
             }
         }
-        
-//        //load background image
-//        let backgroundImage = UIImage.animatedImageNamed("transparent-", duration: 2.0)
-//        guard let unwrappedBackgroundImage = backgroundImage else {
-//            print("ERROR LOADING BACKGROUND IMAGE")
-//            //TODO: set background to certain color
-//            return
-//        }
-//        backgroundImageView.image = unwrappedBackgroundImage
     }
     
 
@@ -98,6 +89,8 @@ class LoginViewController: UIViewController {
         print("register button pressed")
     }
     
+    
+    
     func validateLoginCredentials(username: String, password: String) -> LoginType {
         //TODO: give notice if username/password isn't valid
         
@@ -128,6 +121,11 @@ class LoginViewController: UIViewController {
     
     func checkAnnouncment() -> Bool {
         return true
+    }
+    
+    
+    @IBAction func resetPasswordButtonPressed(sender: AnyObject) {
+        //TODO: SHERIF DO CODE HERE!
     }
     
 
