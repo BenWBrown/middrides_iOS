@@ -324,7 +324,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="346" y="255"/>
+            <point key="canvasLocation" x="308" y="548"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="u3Q-B5-vi4">
@@ -448,35 +448,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGQ-9g-LXa">
-                                <rect key="frame" x="283" y="53" width="34" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGQ-9g-LXa">
+                                <rect key="frame" x="282" y="528" width="36" height="32"/>
                                 <animations/>
-                                <state key="normal" title="Back"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="Uay-RM-koT" kind="show" id="pDQ-qY-bBP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Hh-25-152">
-                                <rect key="frame" x="276" y="91" width="48" height="30"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c02-h4-l9C">
+                                <rect key="frame" x="20" y="166" width="560" height="216"/>
                                 <animations/>
-                                <state key="normal" title="Logout"/>
-                            </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c02-h4-l9C">
-                                <rect key="frame" x="0.0" y="154" width="600" height="216"/>
-                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="hgj-aJ-nmR"/>
+                                </constraints>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m25-JC-KSU">
-                                <rect key="frame" x="257" y="441" width="86" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m25-JC-KSU">
+                                <rect key="frame" x="243.5" y="392" width="113" height="36"/>
                                 <animations/>
-                                <state key="normal" title="Request Van"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Request Van">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="RequestButtonHandler:" destination="3I3-K8-T1p" eventType="touchUpInside" id="fba-ch-1r1"/>
                                     <segue destination="yag-1n-igI" kind="show" id="5bc-S8-Ei3"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request a Ride" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5q-jR-2pe">
+                                <rect key="frame" x="207" y="40" width="186.5" height="33.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pickup Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tE-Ez-zec">
+                                <rect key="frame" x="229" y="133.5" width="143.5" height="24"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.10588235294117647" green="0.20784313725490194" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="c02-h4-l9C" secondAttribute="trailing" id="1q9-yf-42a"/>
+                            <constraint firstItem="0d5-gu-F0s" firstAttribute="top" secondItem="wGQ-9g-LXa" secondAttribute="bottom" constant="40" id="3jz-Y7-Xua"/>
+                            <constraint firstItem="i5q-jR-2pe" firstAttribute="centerX" secondItem="rSA-rc-aIm" secondAttribute="centerX" id="78m-c5-RAc"/>
+                            <constraint firstItem="i5q-jR-2pe" firstAttribute="top" secondItem="gCi-ky-6ZF" secondAttribute="bottom" constant="20" id="AFr-0o-nvc"/>
+                            <constraint firstItem="9tE-Ez-zec" firstAttribute="centerX" secondItem="rSA-rc-aIm" secondAttribute="centerX" id="Ldf-QX-XFx"/>
+                            <constraint firstItem="c02-h4-l9C" firstAttribute="top" secondItem="9tE-Ez-zec" secondAttribute="bottom" constant="8" id="U8b-JC-tVf"/>
+                            <constraint firstItem="c02-h4-l9C" firstAttribute="top" secondItem="gCi-ky-6ZF" secondAttribute="bottom" id="UrS-3Z-Hvd"/>
+                            <constraint firstItem="wGQ-9g-LXa" firstAttribute="centerX" secondItem="rSA-rc-aIm" secondAttribute="centerX" id="dMQ-5t-Ley"/>
+                            <constraint firstItem="9tE-Ez-zec" firstAttribute="top" secondItem="i5q-jR-2pe" secondAttribute="bottom" constant="60" id="hz6-NT-uGs"/>
+                            <constraint firstItem="c02-h4-l9C" firstAttribute="leading" secondItem="rSA-rc-aIm" secondAttribute="leadingMargin" id="moA-cV-sw2"/>
+                            <constraint firstItem="m25-JC-KSU" firstAttribute="centerX" secondItem="rSA-rc-aIm" secondAttribute="centerX" id="rux-WJ-NBC"/>
+                            <constraint firstItem="m25-JC-KSU" firstAttribute="top" secondItem="c02-h4-l9C" secondAttribute="bottom" constant="10" id="vyM-Uw-ieT"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="UrS-3Z-Hvd"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="LocationPickerView" destination="c02-h4-l9C" id="iB5-Yc-J0O"/>
@@ -484,7 +521,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r2w-Ei-r3Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1163" y="1854"/>
+            <point key="canvasLocation" x="1124" y="1750"/>
         </scene>
         <!--User View Controller-->
         <scene sceneID="T8D-Oh-hCV">
@@ -499,7 +536,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oao-7g-SSo">
-                                <rect key="frame" x="204" y="168" width="193" height="123.5"/>
+                                <rect key="frame" x="204" y="167" width="193" height="123.5"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="193" id="Gil-wG-x6J"/>
@@ -522,18 +559,26 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Midd Rides" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NkW-Oe-4Jf">
-                                <rect key="frame" x="154" y="41" width="293" height="33.5"/>
+                                <rect key="frame" x="154" y="40" width="293" height="33.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVW-dF-K7q">
-                                <rect key="frame" x="231" y="374" width="138" height="30"/>
+                                <rect key="frame" x="231" y="373" width="138" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Cancel Van Request"/>
                                 <connections>
                                     <action selector="cancelRequestButtonPressed:" destination="Uay-RM-koT" eventType="touchUpInside" id="3n4-FR-rhN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Byt-Hs-Czx">
+                                <rect key="frame" x="276" y="562" width="48" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButtonPressed:" destination="Uay-RM-koT" eventType="touchUpInside" id="oGV-Br-FVS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -541,12 +586,14 @@
                         <color key="backgroundColor" red="0.10588235294117647" green="0.20784313725490194" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="oao-7g-SSo" firstAttribute="top" secondItem="NkW-Oe-4Jf" secondAttribute="bottom" constant="10" id="4qI-MR-5uO"/>
+                            <constraint firstItem="Byt-Hs-Czx" firstAttribute="centerX" secondItem="t2Q-41-RcU" secondAttribute="centerX" id="7Qn-4d-AyJ"/>
                             <constraint firstItem="oao-7g-SSo" firstAttribute="centerX" secondItem="t2Q-41-RcU" secondAttribute="centerX" id="7eM-IY-Lda"/>
-                            <constraint firstItem="NkW-Oe-4Jf" firstAttribute="top" secondItem="44O-of-tXW" secondAttribute="bottom" constant="21" id="GU9-kT-ft0"/>
+                            <constraint firstItem="NkW-Oe-4Jf" firstAttribute="top" secondItem="44O-of-tXW" secondAttribute="bottom" constant="20" id="GU9-kT-ft0"/>
                             <constraint firstItem="oao-7g-SSo" firstAttribute="centerY" secondItem="t2Q-41-RcU" secondAttribute="centerY" constant="-80" id="KG8-2e-aGx"/>
                             <constraint firstItem="oao-7g-SSo" firstAttribute="top" secondItem="NkW-Oe-4Jf" secondAttribute="bottom" constant="93.5" id="Vad-Ue-aWg"/>
                             <constraint firstItem="NkW-Oe-4Jf" firstAttribute="centerX" secondItem="t2Q-41-RcU" secondAttribute="centerX" id="XG2-Hu-ImW"/>
                             <constraint firstItem="tVW-dF-K7q" firstAttribute="centerX" secondItem="t2Q-41-RcU" secondAttribute="centerX" id="awH-oY-qdB"/>
+                            <constraint firstItem="dLa-yQ-yqZ" firstAttribute="top" secondItem="Byt-Hs-Czx" secondAttribute="bottom" constant="8" id="ipP-lY-G64"/>
                             <constraint firstItem="tVW-dF-K7q" firstAttribute="top" secondItem="oao-7g-SSo" secondAttribute="bottom" constant="82.5" id="uqc-Gc-GvQ"/>
                         </constraints>
                         <variation key="default">
@@ -559,6 +606,7 @@
                     <connections>
                         <outlet property="cancelButton" destination="tVW-dF-K7q" id="dJR-yc-YHE"/>
                         <outlet property="requestVanButton" destination="oao-7g-SSo" id="O1h-Vn-wg5"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="userViewToLoginView" id="2sj-G0-PWV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Zb-Dx-wGY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -581,10 +629,20 @@
                                 <rect key="frame" x="20" y="20" width="560" height="580"/>
                                 <animations/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qR0-kM-8Tu">
-                                <rect key="frame" x="285" y="530" width="30" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifying your driver!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o33-MM-kot">
+                                <rect key="frame" x="170" y="284" width="259" height="33.5"/>
                                 <animations/>
-                                <state key="normal" title="Ok!"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qR0-kM-8Tu">
+                                <rect key="frame" x="285" y="325" width="30" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="OK">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="Uay-RM-koT" kind="show" id="PQh-Qk-bCs"/>
                                 </connections>
@@ -593,13 +651,21 @@
                         <animations/>
                         <color key="backgroundColor" red="0.10588235294117647" green="0.20784313725490194" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="qR0-kM-8Tu" firstAttribute="top" secondItem="o33-MM-kot" secondAttribute="bottom" constant="8" id="15j-Uw-qaL"/>
                             <constraint firstItem="dfE-5r-3bt" firstAttribute="top" secondItem="ej5-Rn-SFw" secondAttribute="bottom" id="8cb-5t-efx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dfE-5r-3bt" secondAttribute="trailing" id="A56-uv-rYr"/>
+                            <constraint firstItem="o33-MM-kot" firstAttribute="centerY" secondItem="Avv-B2-ejE" secondAttribute="centerY" id="Di5-89-lp4"/>
                             <constraint firstItem="aqU-YD-g3d" firstAttribute="top" secondItem="qR0-kM-8Tu" secondAttribute="bottom" constant="40" id="F4Z-S2-lIJ"/>
+                            <constraint firstItem="o33-MM-kot" firstAttribute="centerX" secondItem="Avv-B2-ejE" secondAttribute="centerX" id="LMU-xc-kLB"/>
                             <constraint firstItem="aqU-YD-g3d" firstAttribute="top" secondItem="dfE-5r-3bt" secondAttribute="bottom" id="caE-P3-hcV"/>
                             <constraint firstItem="dfE-5r-3bt" firstAttribute="leading" secondItem="Avv-B2-ejE" secondAttribute="leadingMargin" id="dQU-Pg-oYf"/>
                             <constraint firstItem="qR0-kM-8Tu" firstAttribute="centerX" secondItem="Avv-B2-ejE" secondAttribute="centerX" id="tPz-3I-SV2"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="F4Z-S2-lIJ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="dfE-5r-3bt" id="BV9-LW-ztQ"/>
@@ -647,8 +713,8 @@
         <image name="Van Logo White" width="1430" height="972"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iDC-LK-5mg"/>
+        <segue reference="2sj-G0-PWV"/>
+        <segue reference="npW-wF-9gM"/>
         <segue reference="yc0-0m-zcl"/>
-        <segue reference="PQh-Qk-bCs"/>
     </inferredMetricsTieBreakers>
 </document>

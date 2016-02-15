@@ -74,8 +74,13 @@ class PassengerViewController: UIViewController, UIPickerViewDataSource, UIPicke
     }
     
     //MARK: Delegates
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return rideLocations[row]
+//    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        return rideLocations[row]
+//    }
+    
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        return NSAttributedString(string: rideLocations[row], attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
+        
     }
     
 

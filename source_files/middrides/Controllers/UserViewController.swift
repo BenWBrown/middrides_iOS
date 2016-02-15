@@ -105,6 +105,13 @@ class UserViewController: UIViewController {
         cancelButton.hidden = true
         //TODO: make UI react
     }
+    
+    
+    @IBAction func logoutButtonPressed(sender: AnyObject) {
+        PFUser.logOutInBackgroundWithBlock() { (error: NSError?) -> Void in
+            self.performSegueWithIdentifier("userViewToLoginView", sender: self)
+        }
+    }
     /*
     // MARK: - Navigation
 

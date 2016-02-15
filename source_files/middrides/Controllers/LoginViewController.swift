@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
                 if checkAnnouncment() {
                     self.performSegueWithIdentifier("loginViewToAnnouncementView", sender: self)
                 } else {
-                    self.performSegueWithIdentifier("loginViewToVanRequestView", sender: self)
+                    self.performSegueWithIdentifier("loginViewToUserView", sender: self)
                 }
             }
         }
@@ -120,7 +120,7 @@ class LoginViewController: UIViewController {
     }
     
     func checkAnnouncment() -> Bool {
-        return true
+        return false
     }
     
     
