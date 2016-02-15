@@ -47,8 +47,12 @@ class UserViewController: UIViewController {
         super.viewDidLoad()
         
         if let user = PFUser.currentUser() {
-            if (user["pendingRequest"] as! Bool) {
-                hiddenControls = false
+            if let pendingRequest = user["pendingRequest"] as? Bool {
+                if pendingRequest {
+                    hiddenControls = false
+                } else {
+                    hiddenControls = true
+                }
             } else {
                 hiddenControls = true
             }

@@ -16,14 +16,16 @@ import UIKit
 import Parse
 import Bolts
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var letsRideButton: UIButton!
     @IBOutlet weak var Password: UITextField!
     @IBOutlet weak var Username: UITextField!
-    //@IBOutlet weak var backgroundImageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        Password.delegate = self
+        Username.delegate = self
         
         //login known user
         var curUser = PFUser.currentUser();
@@ -45,6 +47,12 @@ class LoginViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        loginButtonPressed(letsRideButton)
+        
+        return true
     }
     
     @IBAction func loginButtonPressed(sender: UIButton) {
