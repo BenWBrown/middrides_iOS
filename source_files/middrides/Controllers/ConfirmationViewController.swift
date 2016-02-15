@@ -18,7 +18,6 @@ class ConfirmationViewController: UIViewController {
         let backgroundImage = UIImage.animatedImageNamed("transparent-", duration: 2.0)
         guard let unwrappedBackgroundImage = backgroundImage else {
             print("ERROR LOADING BACKGROUND IMAGE")
-            //TODO: set background to certain color
             return
         }
         backgroundImageView.image = unwrappedBackgroundImage

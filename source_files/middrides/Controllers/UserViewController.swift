@@ -89,7 +89,6 @@ class UserViewController: UIViewController {
     }
 
     
-    //TODO: BACKEND ADJUSTMENTS
     @IBAction func cancelRequestButtonPressed(sender: UIButton) {
         var locationID: String?
         
@@ -127,11 +126,8 @@ class UserViewController: UIViewController {
         }
         
         //display message
-        let alertController = UIAlertController(title: "test", message: "test", preferredStyle: .Alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
-        self.presentViewController(alertController, animated: false, completion: nil)
+        self.displayPopUpMessage("Success", message: "Van request canceled")
         hiddenControls = true
-        //TODO: make UI react
     }
     
     

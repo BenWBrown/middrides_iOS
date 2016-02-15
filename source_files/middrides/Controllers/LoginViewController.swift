@@ -16,6 +16,14 @@ import UIKit
 import Parse
 import Bolts
 
+extension UIViewController {
+    func displayPopUpMessage(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
+        self.presentViewController(alertController, animated: false, completion: nil)
+    }
+}
+
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var letsRideButton: UIButton!
@@ -78,7 +86,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 }
                 else {
                     print("ERROR: email not verified")
-                    //TODO: pop error notif
+                    self.displayPopUpMessage("Error", message: "Email not verified")
                 }
                 
             case .Dispatcher:
@@ -86,7 +94,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
             case .Invalid:
                 //display invalid login message
-                print("invalid login, username: " + self.Username.text! + " password: " + self.Password.text!);
+                print("invalid login, username: " + self.Username.text! + " password: " + self.Password.text!)
+                self.displayPopUpMessage("Error", message: "Invalid username or password")
             }
 
         }

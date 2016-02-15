@@ -73,22 +73,21 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     func validRegisterDetails(username: String, password: String, confirm: String) -> Bool {
         
         //TODO: give notice if username/password isn't valid
-        
-        if (username.characters.count <= 15){
-            //make sure there username contains string + '@middlebury.edu'
-            return false;
-        }
+
         if ((username.hasSuffix("@middlebury.edu")) == false){
             //make sure we have a valid email
+            self.displayPopUpMessage("Error", message: "Please enter a valid Middlebury email address")
             return false;
         }
         
         if (password.characters.count < 6){
             //make sure there are 6 characters in a password
+            self.displayPopUpMessage("Error", message: "Password must be at least 6 characters")
             return false;
         }
         
         if password != confirm {
+            self.displayPopUpMessage("Error", message: "Passwords do not match")
             return false
         }
         
