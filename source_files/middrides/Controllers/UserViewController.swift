@@ -79,13 +79,16 @@ class UserViewController: UIViewController {
     
     @IBAction func requestVanButtonPressed(sender: UIButton) {
         if checkTimeOut() {
-            self.performSegueWithIdentifier("userViewToVanRequestView", sender: self)
+            if hiddenControls {
+                self.performSegueWithIdentifier("userViewToVanRequestView", sender: self)
+            } else {
+                self.displayPopUpMessage("Error", message: "Cannot make two van requests at the same time")
+            }
         } else {
             self.displayPopUpMessage("Error", message: "Cannot make van requests within 5 minutes of each other")
-            //PFPush.subscribeToChannelInBackground(<#T##channel: String##String#>)
+            //PFPush.subscribeToChannelInBackground(channel: String)
         }
         
-        //TODO: CAN'T REQUEST VAN IF YOU HAVE VAN REQUEST OUT
     }
 
     

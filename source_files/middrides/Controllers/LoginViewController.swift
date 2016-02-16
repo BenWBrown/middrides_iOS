@@ -109,7 +109,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     func validateLoginCredentials(username: String, password: String) -> LoginType {
-        //TODO: give notice if username/password isn't valid
         
         if (username.characters.count <= 15){
             //make sure there username contains string + '@middlebury.edu'

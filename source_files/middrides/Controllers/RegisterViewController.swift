@@ -55,9 +55,10 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             user.signUpInBackgroundWithBlock {
                 (succeeded: Bool, error: NSError?) -> Void in
                 if let error = error {
-                    let errorString = error.userInfo["error"] as? NSString
-                    // TODO: tell the user to put in valid info
-                    print(errorString);
+                    if let errorString = error.userInfo["error"] as? NSString {
+                        self.displayPopUpMessage("Error", message: errorString as String)
+                        print(errorString)
+                    }
                 }
             }
             
@@ -72,8 +73,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     //verify register credentials
     func validRegisterDetails(username: String, password: String, confirm: String) -> Bool {
         
-        //TODO: give notice if username/password isn't valid
-
         if ((username.hasSuffix("@middlebury.edu")) == false){
             //make sure we have a valid email
             self.displayPopUpMessage("Error", message: "Please enter a valid Middlebury email address")
