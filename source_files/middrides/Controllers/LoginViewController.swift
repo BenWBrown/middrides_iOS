@@ -37,19 +37,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         //login known user
         let curUser = PFUser.currentUser();
-        print(curUser)
-        print("here")
+        
         if (curUser != nil){
             if (curUser!.username == "dispatcher@middlebury.edu"){
                 self.performSegueWithIdentifier("loginViewToDispatcherView", sender: self)
             } else {
                 //if user
                 if checkAnnouncement() {
-                    print("true")
                     self.performSegueWithIdentifier("loginViewToAnnouncementView", sender: self)
                 } else {
-                    print("false");
-                    self.performSegueWithIdentifier("loginViewToUserView", sender: self)
+                    dispatch_async(dispatch_get_main_queue()) {
+                        /*solution from stackOverflow answer at http://stackoverflow.com/questions/24982722/performseguewithidentifier-does-not-work
+                        */
+                        self.performSegueWithIdentifier("loginViewToUserView", sender: self)
+                    }
                 }
             }
         }
