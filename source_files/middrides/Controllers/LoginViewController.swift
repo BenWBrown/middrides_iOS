@@ -36,7 +36,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         Username.delegate = self
         
         //login known user
-        var curUser = PFUser.currentUser();
+        let curUser = PFUser.currentUser();
         if (curUser != nil){
             if (curUser!.username == "dispatcher@middlebury.edu"){
                 self.performSegueWithIdentifier("loginViewToDispatcherView", sender: self)

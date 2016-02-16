@@ -47,7 +47,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             //check that username and password are valid
             
             //create user in Parse
-            var user = PFUser();
+            let user = PFUser();
             user.username = self.Username.text!;
             user.password = self.Password.text!;
             user.email = self.Username.text!;
