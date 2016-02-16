@@ -536,7 +536,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r2w-Ei-r3Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1498" y="1450"/>
+            <point key="canvasLocation" x="1472" y="1057"/>
         </scene>
         <!--User View Controller-->
         <scene sceneID="T8D-Oh-hCV">
@@ -650,6 +650,7 @@
                         <outlet property="requestInfoLabel" destination="XV6-VK-4gT" id="QIO-Qa-rnM"/>
                         <outlet property="requestVanButton" destination="oao-7g-SSo" id="O1h-Vn-wg5"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="userViewToLoginView" id="2sj-G0-PWV"/>
+                        <segue destination="3I3-K8-T1p" kind="show" identifier="userViewToVanRequestView" id="pji-O5-eAc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Zb-Dx-wGY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -843,7 +844,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M2J-3o-UH7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="838" y="1444"/>
+            <point key="canvasLocation" x="677" y="1612"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="qvE-de-9Ow">
@@ -883,7 +884,7 @@
         <image name="Van Logo White" width="1430" height="972"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="npW-wF-9gM"/>
+        <segue reference="pDQ-qY-bBP"/>
         <segue reference="2sj-G0-PWV"/>
         <segue reference="yc0-0m-zcl"/>
     </inferredMetricsTieBreakers>
