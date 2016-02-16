@@ -36,15 +36,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         Username.delegate = self
         
         //login known user
-        var curUser = PFUser.currentUser();
+        let curUser = PFUser.currentUser();
+        print(curUser)
+        print("here")
         if (curUser != nil){
             if (curUser!.username == "dispatcher@middlebury.edu"){
                 self.performSegueWithIdentifier("loginViewToDispatcherView", sender: self)
             } else {
                 //if user
-                if checkAnnouncment() {
+                if checkAnnouncement() {
+                    print("true")
                     self.performSegueWithIdentifier("loginViewToAnnouncementView", sender: self)
                 } else {
+                    print("false");
                     self.performSegueWithIdentifier("loginViewToUserView", sender: self)
                 }
             }
@@ -78,7 +82,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 }
                 let emailVerified = unwrappedUser["emailVerified"] as! Bool
                 if emailVerified {
-                    if self.checkAnnouncment() {
+                    if self.checkAnnouncement() {
                         self.performSegueWithIdentifier("loginViewToAnnouncementView", sender: self)
                     } else {
                         self.performSegueWithIdentifier("loginViewToUserView", sender: self)
@@ -129,13 +133,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if (username == "dispatcher@middlebury.edu"){
             return .Dispatcher;
         }
-        
 
         return .User;
 
     }
     
-    func checkAnnouncment() -> Bool {
+    func checkAnnouncement() -> Bool {
         return false
     }
     
