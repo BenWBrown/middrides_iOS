@@ -86,7 +86,6 @@ class UserViewController: UIViewController {
             }
         } else {
             self.displayPopUpMessage("Error", message: "Cannot make van requests within 5 minutes of each other")
-            //PFPush.subscribeToChannelInBackground(channel: String)
         }
         
     }
@@ -105,6 +104,10 @@ class UserViewController: UIViewController {
                     if let unwrappedObjects = objects {
                         for object in unwrappedObjects {
                             locationID = object["locationID"] as? String
+                            var locName = object["pickUpLocation"] as? String
+                            locName = locName!.stringByReplacingOccurrencesOfString(" ", withString: "-")
+                            locName = locName!.stringByReplacingOccurrencesOfString("/", withString: "-")
+                            PFPush.unsubscribeFromChannelInBackground(locName!)
                             object.deleteEventually()
                         }
                     }

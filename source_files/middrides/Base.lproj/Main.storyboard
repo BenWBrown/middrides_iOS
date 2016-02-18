@@ -161,7 +161,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="601"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AQK-xZ-3iI">
@@ -191,7 +191,7 @@
                                 </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NjD-h6-crW">
-                                <rect key="frame" x="266" y="529" width="68" height="32"/>
+                                <rect key="frame" x="266" y="528" width="68" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="oIo-pd-tK7"/>
                                 </constraints>
@@ -209,7 +209,7 @@
                                     <segue destination="1xs-6e-Z3g" kind="showDetail" id="hue-yZ-Iol"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xod-ep-5hp">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xod-ep-5hp">
                                 <rect key="frame" x="240" y="380" width="121" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="zxb-1U-x0a"/>
@@ -223,7 +223,7 @@
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" verticalHuggingPriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="1jB-6r-o0s">
-                                <rect key="frame" x="245" y="282" width="111" height="99"/>
+                                <rect key="frame" x="245" y="282" width="111" height="98.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -247,7 +247,7 @@
                                 </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODt-fb-j9X">
-                                <rect key="frame" x="235" y="561" width="130" height="32"/>
+                                <rect key="frame" x="235" y="560" width="130" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Forgot Password?">
                                     <color key="titleColor" red="0.39982357880000002" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -256,8 +256,8 @@
                                     <segue destination="OOO-E3-D9l" kind="show" id="3qC-MM-yil"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" contentMode="scaleToFill" verticalHuggingPriority="1" verticalCompressionResistancePriority="1" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G8f-Xg-gU0">
-                                <rect key="frame" x="180" y="429" width="240" height="99"/>
+                            <view hidden="YES" contentMode="scaleToFill" verticalHuggingPriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="G8f-Xg-gU0">
+                                <rect key="frame" x="180" y="429" width="240" height="98.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="LwM-Yu-Igq"/>
@@ -834,8 +834,8 @@
         <image name="Van Logo White" width="1430" height="972"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="npW-wF-9gM"/>
-        <segue reference="2sj-G0-PWV"/>
         <segue reference="yc0-0m-zcl"/>
+        <segue reference="2sj-G0-PWV"/>
+        <segue reference="pDQ-qY-bBP"/>
     </inferredMetricsTieBreakers>
 </document>

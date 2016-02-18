@@ -13,14 +13,13 @@ class ConfirmationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         //load background image
         let backgroundImage = UIImage.animatedImageNamed("transparent-", duration: 2.0)
         guard let unwrappedBackgroundImage = backgroundImage else {
             print("ERROR LOADING BACKGROUND IMAGE")
             return
         }
-        backgroundImageView.image = unwrappedBackgroundImage
+        //backgroundImageView.image = unwrappedBackgroundImage
     }
 
     override func didReceiveMemoryWarning() {

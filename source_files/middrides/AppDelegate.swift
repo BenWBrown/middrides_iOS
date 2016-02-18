@@ -114,11 +114,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(userInfo)
         PFPush.handlePush(userInfo)
         let okButton = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
-        let nextDest = userInfo["Location"] as! String
+        let nextDest = userInfo["location"] as! String
+        
+        //unsubscribe from necessary channel
+        var channelName = nextDest.stringByReplacingOccurrencesOfString(" ", withString: "-")
+        channelName = nextDest.stringByReplacingOccurrencesOfString("/", withString: "-")
+        PFPush.unsubscribeFromChannelInBackground(channelName)
         let msg = "A van is headed to " + nextDest
+        
+        var curView = self.window?.rootViewController
+        /*
+        'while' loop with presented view controller based on top answer here:
+        http://stackoverflow.com/questions/26667009/get-top-most-uiviewcontroller
+        */
+        while ((curView?.presentedViewController) != nil){
+            curView = curView?.presentedViewController
+        }
+        
         let alert = UIAlertController(title: "MiddRides Notice!", message: msg, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(okButton)
-        self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
+        
+        curView!.presentViewController(alert, animated: true, completion: nil)
+        
         if application.applicationState == UIApplicationState.Inactive {
             PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
         }

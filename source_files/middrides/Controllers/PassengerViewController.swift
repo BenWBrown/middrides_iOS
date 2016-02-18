@@ -37,15 +37,25 @@ class PassengerViewController: UIViewController, UIPickerViewDataSource, UIPicke
     var req = PFObject(className: "UserRequest")
     
     func handleVanRequest() -> Void {
+        
         let index = LocationPickerView.selectedRowInComponent(0)
         req["pickUpLocation"] = rideLocations[index]
         req["locationId"] = rideLocationIDs[index]
         req["userId"] = PFUser.currentUser()?.objectId
         req["email"] = PFUser.currentUser()?.email
+        
+        //get channel name working right
+        var channelName = self.rideLocations[index]
+        channelName = channelName.stringByReplacingOccurrencesOfString(" ", withString: "-")
+        channelName = channelName.stringByReplacingOccurrencesOfString("/", withString: "-")
+
         req.saveInBackgroundWithBlock{
             (success: Bool, error: NSError?) -> Void in
             if (success) {
                 NSUserDefaults.standardUserDefaults().setObject(NSDate(timeIntervalSinceNow: 0), forKey: "dateSinceLastRequest")
+                print(channelName)
+                PFPush.subscribeToChannelInBackground(channelName)
+                
             } else {
                 // There was a problem, check error.description
                 print("Error in sending Request")
