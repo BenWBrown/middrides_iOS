@@ -33,6 +33,7 @@
 		B52CED721BC31240007ABADB /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52CED6D1BC31240007ABADB /* RegisterViewController.swift */; };
 		B52CED731BC31240007ABADB /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52CED6D1BC31240007ABADB /* RegisterViewController.swift */; };
 		B531AE411C755ABA00BF04AE /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531AE401C755ABA00BF04AE /* Connectivity.swift */; settings = {ASSET_TAGS = (); }; };
+		B531AE431C760A9100BF04AE /* SlideFromTopSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531AE421C760A9100BF04AE /* SlideFromTopSegue.swift */; settings = {ASSET_TAGS = (); }; };
 		B55C4CAA1BC3113100907323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C4CA91BC3113100907323 /* AppDelegate.swift */; };
 		B55C4CAF1BC3113100907323 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55C4CAD1BC3113100907323 /* Main.storyboard */; };
 		B55C4CB11BC3113100907323 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B55C4CB01BC3113100907323 /* Assets.xcassets */; };
@@ -83,6 +84,7 @@
 		B52CED6C1BC31240007ABADB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
 		B52CED6D1BC31240007ABADB /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = Controllers/RegisterViewController.swift; sourceTree = "<group>"; };
 		B531AE401C755ABA00BF04AE /* Connectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		B531AE421C760A9100BF04AE /* SlideFromTopSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideFromTopSegue.swift; sourceTree = "<group>"; };
 		B55C4CA61BC3113100907323 /* middrides.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = middrides.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55C4CA91BC3113100907323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B55C4CAE1BC3113100907323 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				317F45C51BFC3745008DC1FD /* PushResponseController.swift */,
 				B55C4CAD1BC3113100907323 /* Main.storyboard */,
 				B5F785621C73CB6900136F3C /* SlideFromRightSegue.swift */,
+				B531AE421C760A9100BF04AE /* SlideFromTopSegue.swift */,
 				B5F785641C74E23400136F3C /* SlideFromLeftSegue.swift */,
 				B5F785661C74E2D100136F3C /* PopInSegue.swift */,
 				B55C4CB01BC3113100907323 /* Assets.xcassets */,
@@ -381,6 +384,7 @@
 				B531AE411C755ABA00BF04AE /* Connectivity.swift in Sources */,
 				B5F785651C74E23400136F3C /* SlideFromLeftSegue.swift in Sources */,
 				B5F4E6241C7154F700D12FBA /* ConfirmationViewController.swift in Sources */,
+				B531AE431C760A9100BF04AE /* SlideFromTopSegue.swift in Sources */,
 				319F257D1C55825500C10727 /* PassengerViewController.swift in Sources */,
 				B5F785631C73CB6900136F3C /* SlideFromRightSegue.swift in Sources */,
 			);
