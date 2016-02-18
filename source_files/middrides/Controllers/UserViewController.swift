@@ -11,7 +11,7 @@ import Parse
 
 class UserViewController: UIViewController {
 
-    let TIME_OUT = 300.0
+    let TIME_OUT = 0.0
     let ERROR_TITLE = "ERROR"
     let ERROR_MESSAGE = "Time-out message"
     let ACTION_TITLE = "OK"
