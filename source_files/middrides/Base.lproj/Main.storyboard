@@ -316,12 +316,12 @@
                         <outlet property="letsRideButton" destination="Xod-ep-5hp" id="l2f-59-ASl"/>
                         <segue destination="Po5-rz-TDd" kind="show" identifier="loginViewToAnnouncementView" id="fCD-Kw-uw1"/>
                         <segue destination="aME-Ic-zgd" kind="show" identifier="loginViewToDispatcherView" id="yc0-0m-zcl"/>
-                        <segue destination="Uay-RM-koT" kind="show" identifier="loginViewToUserView" id="npW-wF-9gM"/>
+                        <segue destination="Uay-RM-koT" kind="showDetail" identifier="loginViewToUserView" id="npW-wF-9gM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="334" y="680"/>
+            <point key="canvasLocation" x="164" y="679"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="u3Q-B5-vi4">
@@ -433,17 +433,18 @@
                         <viewControllerLayoutGuide type="bottom" id="0d5-gu-F0s"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rSA-rc-aIm">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="601"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGQ-9g-LXa">
-                                <rect key="frame" x="282" y="561" width="36" height="32"/>
+                                <rect key="frame" x="282" y="560" width="36" height="32"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Back">
                                     <color key="titleColor" red="0.39982357880000002" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Uay-RM-koT" kind="show" id="pDQ-qY-bBP"/>
+                                    <segue destination="Uay-RM-koT" kind="custom" customClass="SlideFromLeftSegue" customModule="middrides" customModuleProvider="target" id="pDQ-qY-bBP"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c02-h4-l9C">
@@ -460,17 +461,19 @@
                                 </state>
                                 <connections>
                                     <action selector="RequestButtonHandler:" destination="3I3-K8-T1p" eventType="touchUpInside" id="fba-ch-1r1"/>
-                                    <segue destination="yag-1n-igI" kind="show" id="5bc-S8-Ei3"/>
+                                    <segue destination="yag-1n-igI" kind="custom" identifier="" customClass="PopInSegue" customModule="middrides" customModuleProvider="target" id="5bc-S8-Ei3"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request a Ride" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5q-jR-2pe">
-                                <rect key="frame" x="207" y="40" width="187" height="34"/>
+                                <rect key="frame" x="207" y="40" width="186.5" height="33.5"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pickup Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tE-Ez-zec">
-                                <rect key="frame" x="228" y="133" width="144" height="24"/>
+                                <rect key="frame" x="228" y="133" width="143.5" height="24"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -613,12 +616,12 @@
                         <outlet property="requestInfoLabel" destination="XV6-VK-4gT" id="QIO-Qa-rnM"/>
                         <outlet property="requestVanButton" destination="oao-7g-SSo" id="O1h-Vn-wg5"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="userViewToLoginView" id="2sj-G0-PWV"/>
-                        <segue destination="3I3-K8-T1p" kind="show" identifier="userViewToVanRequestView" id="pji-O5-eAc"/>
+                        <segue destination="3I3-K8-T1p" kind="custom" identifier="userViewToVanRequestView" customClass="SlideFromRightSegue" customModule="middrides" customModuleProvider="target" id="pji-O5-eAc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Zb-Dx-wGY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1108" y="680"/>
+            <point key="canvasLocation" x="1157" y="678.5"/>
         </scene>
         <!--Reset Password View Controller-->
         <scene sceneID="W2K-mY-SOc">
@@ -749,26 +752,29 @@
                         <viewControllerLayoutGuide type="bottom" id="aqU-YD-g3d"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Avv-B2-ejE">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="601"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dfE-5r-3bt">
-                                <rect key="frame" x="20" y="20" width="560" height="581"/>
+                                <rect key="frame" x="20" y="20" width="560" height="580"/>
+                                <animations/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifying your driver!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o33-MM-kot">
-                                <rect key="frame" x="170" y="284" width="259" height="34"/>
+                                <rect key="frame" x="170" y="284" width="259" height="33.5"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qR0-kM-8Tu">
-                                <rect key="frame" x="285" y="326" width="30" height="36"/>
+                                <rect key="frame" x="285" y="325" width="30" height="36"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="OK">
                                     <color key="titleColor" red="0.39982357880000002" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Uay-RM-koT" kind="show" id="PQh-Qk-bCs"/>
+                                    <segue destination="Uay-RM-koT" kind="custom" customClass="SlideFromLeftSegue" customModule="middrides" customModuleProvider="target" id="PQh-Qk-bCs"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -834,6 +840,8 @@
         <image name="Van Logo White" width="1430" height="972"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="2sj-G0-PWV"/>
+        <segue reference="npW-wF-9gM"/>
         <segue reference="yc0-0m-zcl"/>
         <segue reference="2sj-G0-PWV"/>
         <segue reference="pDQ-qY-bBP"/>

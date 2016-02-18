@@ -11,7 +11,11 @@ import Parse
 
 class UserViewController: UIViewController {
 
+<<<<<<< HEAD
     let TIME_OUT = 0.0
+=======
+    let TIME_OUT = 000.0
+>>>>>>> 1ffbe8132e846da43d76f8fa23a892979264864c
     let ERROR_TITLE = "ERROR"
     let ERROR_MESSAGE = "Time-out message"
     let ACTION_TITLE = "OK"
@@ -35,6 +39,7 @@ class UserViewController: UIViewController {
                                 let object = unwrappedObjects[0]
                                 let name = object["pickUpLocation"] as! String
                                 self.requestInfoLabel.text = "Your van is en route to\n" + name
+                                self.locationName = name
                             }
                         }
                     }
@@ -42,6 +47,8 @@ class UserViewController: UIViewController {
             }
         }
     }
+    
+    var locationName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,14 +124,14 @@ class UserViewController: UIViewController {
         }
         
         //update Parse LocationStatus
-        if let unwrappedLocationID = locationID {
+        if let unwrappedLocationName = self.locationName {
             let query = PFQuery(className: "LocationStatus")
-            query.whereKey("objectId", equalTo: unwrappedLocationID)
+            query.whereKey("name", equalTo: unwrappedLocationName)
             query.findObjectsInBackgroundWithBlock() { (objects: [PFObject]?, error: NSError?) -> Void in
                 if let unwrappedObjects = objects {
                     if (unwrappedObjects[0]["passengersWaiting"] as! Int) > 0 {
                         let numPassengers = unwrappedObjects[0]["passengersWaiting"] as! Int
-                        unwrappedObjects[0]["passengersWaiting"] = numPassengers + 1
+                        unwrappedObjects[0]["passengersWaiting"] = numPassengers - 1
                     }
                     unwrappedObjects[0].saveInBackground()
                 }
