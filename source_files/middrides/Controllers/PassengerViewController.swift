@@ -36,10 +36,13 @@ class PassengerViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     var req = PFObject(className: "UserRequest")
     
+    //TODO: REFACTOR TO NOT USE GLOBAL VARIABLS
     func handleVanRequest() -> Void {
         let index = LocationPickerView.selectedRowInComponent(0)
+        let locationName = rideLocations[index]
         req["pickUpLocation"] = rideLocations[index]
-        req["locationId"] = rideLocationIDs[index]
+        let locationId = rideLocationIDs[index]
+        req["locationId"] = locationId
         req["userId"] = PFUser.currentUser()?.objectId
         req["email"] = PFUser.currentUser()?.email
         req.saveInBackgroundWithBlock{
@@ -55,6 +58,17 @@ class PassengerViewController: UIViewController, UIPickerViewDataSource, UIPicke
             user["pendingRequest"] = true
             user.saveInBackground()
         }
+        
+        //update Parse LocationStatus
+            let query = PFQuery(className: "LocationStatus")
+        query.whereKey("name", equalTo: locationName)
+            query.findObjectsInBackgroundWithBlock() { (objects: [PFObject]?, error: NSError?) -> Void in
+                if let unwrappedObjects = objects {
+                    let numPassengers = unwrappedObjects[0]["passengersWaiting"] as! Int
+                    unwrappedObjects[0]["passengersWaiting"] = numPassengers + 1
+                    unwrappedObjects[0].saveInBackground()
+                }
+            }
     }
     
     /*---------------------
