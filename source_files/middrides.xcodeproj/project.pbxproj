@@ -41,6 +41,9 @@
 		B5CEAD701C72162600101CED /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CEAD6F1C72162600101CED /* ResetPasswordViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B5E9C0AC1BFBD2A000C97185 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E9C0AB1BFBD2A000C97185 /* UserViewController.swift */; };
 		B5F4E6241C7154F700D12FBA /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4E6231C7154F700D12FBA /* ConfirmationViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		B5F785631C73CB6900136F3C /* SlideFromRightSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F785621C73CB6900136F3C /* SlideFromRightSegue.swift */; settings = {ASSET_TAGS = (); }; };
+		B5F785651C74E23400136F3C /* SlideFromLeftSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F785641C74E23400136F3C /* SlideFromLeftSegue.swift */; settings = {ASSET_TAGS = (); }; };
+		B5F785671C74E2D100136F3C /* PopInSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F785661C74E2D100136F3C /* PopInSegue.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +96,9 @@
 		B5CEAD6F1C72162600101CED /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResetPasswordViewController.swift; path = Controllers/ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		B5E9C0AB1BFBD2A000C97185 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserViewController.swift; path = Controllers/UserViewController.swift; sourceTree = "<group>"; };
 		B5F4E6231C7154F700D12FBA /* ConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfirmationViewController.swift; path = Controllers/ConfirmationViewController.swift; sourceTree = "<group>"; };
+		B5F785621C73CB6900136F3C /* SlideFromRightSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideFromRightSegue.swift; sourceTree = "<group>"; };
+		B5F785641C74E23400136F3C /* SlideFromLeftSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideFromLeftSegue.swift; sourceTree = "<group>"; };
+		B5F785661C74E2D100136F3C /* PopInSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopInSegue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +195,9 @@
 				B55C4CA91BC3113100907323 /* AppDelegate.swift */,
 				317F45C51BFC3745008DC1FD /* PushResponseController.swift */,
 				B55C4CAD1BC3113100907323 /* Main.storyboard */,
+				B5F785621C73CB6900136F3C /* SlideFromRightSegue.swift */,
+				B5F785641C74E23400136F3C /* SlideFromLeftSegue.swift */,
+				B5F785661C74E2D100136F3C /* PopInSegue.swift */,
 				B55C4CB01BC3113100907323 /* Assets.xcassets */,
 				B55C4CB21BC3113100907323 /* LaunchScreen.storyboard */,
 				B55C4CB51BC3113100907323 /* Info.plist */,
@@ -352,13 +361,16 @@
 			files = (
 				317F45C61BFC3745008DC1FD /* PushResponseController.swift in Sources */,
 				B52CED711BC31240007ABADB /* RegisterViewController.swift in Sources */,
+				B5F785671C74E2D100136F3C /* PopInSegue.swift in Sources */,
 				B5E9C0AC1BFBD2A000C97185 /* UserViewController.swift in Sources */,
 				B5CEAD701C72162600101CED /* ResetPasswordViewController.swift in Sources */,
 				B52CED6E1BC31240007ABADB /* LoginViewController.swift in Sources */,
 				3164777B1C10B0A00095348A /* LocationStatus.swift in Sources */,
 				B55C4CAA1BC3113100907323 /* AppDelegate.swift in Sources */,
+				B5F785651C74E23400136F3C /* SlideFromLeftSegue.swift in Sources */,
 				B5F4E6241C7154F700D12FBA /* ConfirmationViewController.swift in Sources */,
 				319F257D1C55825500C10727 /* PassengerViewController.swift in Sources */,
+				B5F785631C73CB6900136F3C /* SlideFromRightSegue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
