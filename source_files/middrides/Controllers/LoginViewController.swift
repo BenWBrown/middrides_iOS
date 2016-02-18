@@ -42,10 +42,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 self.performSegueWithIdentifier("loginViewToDispatcherView", sender: self)
             } else {
                 //if user
-                if checkAnnouncment() {
+                if checkAnnouncement() {
                     self.performSegueWithIdentifier("loginViewToAnnouncementView", sender: self)
                 } else {
-                    self.performSegueWithIdentifier("loginViewToUserView", sender: self)
+                    dispatch_async(dispatch_get_main_queue()) {
+                        /*solution from stackOverflow answer at http://stackoverflow.com/questions/24982722/performseguewithidentifier-does-not-work
+                        */
+                        self.performSegueWithIdentifier("loginViewToUserView", sender: self)
+                    }
                 }
             }
         }
@@ -78,7 +82,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 }
                 let emailVerified = unwrappedUser["emailVerified"] as! Bool
                 if emailVerified {
-                    if self.checkAnnouncment() {
+                    if self.checkAnnouncement() {
                         self.performSegueWithIdentifier("loginViewToAnnouncementView", sender: self)
                     } else {
                         self.performSegueWithIdentifier("loginViewToUserView", sender: self)
@@ -129,13 +133,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if (username == "dispatcher@middlebury.edu"){
             return .Dispatcher;
         }
-        
 
         return .User;
 
     }
     
-    func checkAnnouncment() -> Bool {
+    func checkAnnouncement() -> Bool {
         return false
     }
     

@@ -26,6 +26,7 @@
 		3198E2DD1BDB099F00299E8D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3198E2DC1BDB099F00299E8D /* libz.tbd */; };
 		3198E2DF1BDB09AE00299E8D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3198E2DE1BDB09AE00299E8D /* libsqlite3.tbd */; };
 		319F257D1C55825500C10727 /* PassengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319F257C1C55825500C10727 /* PassengerViewController.swift */; };
+		327307E21C74252E0061510E /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327307E11C74252E0061510E /* Connectivity.swift */; };
 		B52CED6E1BC31240007ABADB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52CED6C1BC31240007ABADB /* LoginViewController.swift */; };
 		B52CED6F1BC31240007ABADB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52CED6C1BC31240007ABADB /* LoginViewController.swift */; };
 		B52CED701BC31240007ABADB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52CED6C1BC31240007ABADB /* LoginViewController.swift */; };
@@ -38,7 +39,7 @@
 		B55C4CB41BC3113100907323 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55C4CB21BC3113100907323 /* LaunchScreen.storyboard */; };
 		B55C4CBF1BC3113200907323 /* middridesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C4CBE1BC3113200907323 /* middridesTests.swift */; };
 		B55C4CCA1BC3113200907323 /* middridesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C4CC91BC3113200907323 /* middridesUITests.swift */; };
-		B5CEAD701C72162600101CED /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CEAD6F1C72162600101CED /* ResetPasswordViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		B5CEAD701C72162600101CED /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CEAD6F1C72162600101CED /* ResetPasswordViewController.swift */; };
 		B5E9C0AC1BFBD2A000C97185 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E9C0AB1BFBD2A000C97185 /* UserViewController.swift */; };
 		B5F4E6241C7154F700D12FBA /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4E6231C7154F700D12FBA /* ConfirmationViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B5F785631C73CB6900136F3C /* SlideFromRightSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F785621C73CB6900136F3C /* SlideFromRightSegue.swift */; settings = {ASSET_TAGS = (); }; };
@@ -79,6 +80,7 @@
 		3198E2DC1BDB099F00299E8D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		3198E2DE1BDB09AE00299E8D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		319F257C1C55825500C10727 /* PassengerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PassengerViewController.swift; path = Controllers/PassengerViewController.swift; sourceTree = "<group>"; };
+		327307E11C74252E0061510E /* Connectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		B52CED6C1BC31240007ABADB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
 		B52CED6D1BC31240007ABADB /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = Controllers/RegisterViewController.swift; sourceTree = "<group>"; };
 		B55C4CA61BC3113100907323 /* middrides.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = middrides.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +144,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		327307E31C7425C00061510E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				327307E11C74252E0061510E /* Connectivity.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		B52CED741BC3125A007ABADB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +201,7 @@
 		B55C4CA81BC3113100907323 /* middrides */ = {
 			isa = PBXGroup;
 			children = (
+				327307E31C7425C00061510E /* Utils */,
 				B52CED741BC3125A007ABADB /* Controllers */,
 				B55C4CA91BC3113100907323 /* AppDelegate.swift */,
 				317F45C51BFC3745008DC1FD /* PushResponseController.swift */,
