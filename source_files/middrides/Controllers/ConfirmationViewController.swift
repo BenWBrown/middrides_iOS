@@ -19,7 +19,7 @@ class ConfirmationViewController: UIViewController {
             print("ERROR LOADING BACKGROUND IMAGE")
             return
         }
-        backgroundImageView.image = unwrappedBackgroundImage
+        //backgroundImageView.image = unwrappedBackgroundImage
     }
 
     override func didReceiveMemoryWarning() {

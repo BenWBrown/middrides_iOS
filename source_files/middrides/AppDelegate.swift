@@ -118,7 +118,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //unsubscribe from necessary channel
         var channelName = nextDest.stringByReplacingOccurrencesOfString(" ", withString: "-")
-        channelName = nextDest.stringByReplacingOccurrencesOfString("/", withString: "-")
+        channelName = channelName.stringByReplacingOccurrencesOfString("/", withString: "-")
         PFPush.unsubscribeFromChannelInBackground(channelName)
         let msg = "A van is headed to " + nextDest
         
