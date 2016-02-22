@@ -90,6 +90,7 @@ class UserViewController: UIViewController {
     @IBAction func requestVanButtonPressed(sender: UIButton) {
         if checkTimeOut() {
             if hiddenControls {
+                NSUserDefaults.standardUserDefaults().setBool(true, forKey: "requestPending");
                 self.performSegueWithIdentifier("userViewToVanRequestView", sender: self)
             } else {
                 self.displayPopUpMessage("Error", message: "Cannot make two van requests at the same time")
@@ -141,6 +142,9 @@ class UserViewController: UIViewController {
             }
         }
         
+        //Update local variables
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "requestPending");
+        
         //display message
         self.displayPopUpMessage("Success", message: "Van request canceled")
         hiddenControls = true
@@ -148,9 +152,22 @@ class UserViewController: UIViewController {
     
     
     @IBAction func logoutButtonPressed(sender: AnyObject) {
-        PFUser.logOutInBackgroundWithBlock() { (error: NSError?) -> Void in
-            self.performSegueWithIdentifier("userViewToLoginView", sender: self)
-        }
+        // If the user has requested a van and is trying to logout, they should be informed.
+        let logoutConfirmation = UIAlertController(title: "Confirm Logout", message: "Are you sure you want to logout? This will cancel any requests you have placed.", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        logoutConfirmation.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+            // If user confirms logout
+            self.cancelRequestButtonPressed(self.cancelButton);
+            PFUser.logOutInBackgroundWithBlock() { (error: NSError?) -> Void in
+                self.performSegueWithIdentifier("userViewToLoginView", sender: self)
+            }
+        }))
+        
+        logoutConfirmation.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
+            //If user cancels, nothing happens
+        }))
+        
+        presentViewController(logoutConfirmation, animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation

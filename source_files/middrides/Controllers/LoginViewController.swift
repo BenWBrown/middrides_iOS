@@ -35,11 +35,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         Password.delegate = self
         Username.delegate = self
         
-        //Disable autocorrect/autosuggest
+        // Disable autocorrect/autosuggest
         Username.autocorrectionType = .No;
         Password.autocorrectionType = .No;
         
-        //login known user
+        // login known user
         let curUser = PFUser.currentUser();
         if (curUser != nil){
             if (curUser!.username == "dispatcher@middlebury.edu"){
