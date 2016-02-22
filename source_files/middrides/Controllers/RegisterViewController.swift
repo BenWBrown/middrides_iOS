@@ -23,11 +23,13 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Username.delegate = self
-        Password.delegate = self
-        ConfirmPassword.delegate = self
+        Username.delegate = self;
+        Password.delegate = self;
+        ConfirmPassword.delegate = self;        
+        Username.autocorrectionType = .No;
+        Password.autocorrectionType = .No;
+        ConfirmPassword.autocorrectionType = .No;
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -92,7 +94,11 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         
         return true;
     }
-
+    
+    // Hide keyboard
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true);
+    }
     /*
     // MARK: - Navigation
 

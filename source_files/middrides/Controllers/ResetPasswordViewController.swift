@@ -23,8 +23,10 @@ class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
-        emailTextField?.delegate? = self;
+        emailTextField?.delegate = self;
+        emailTextField?.autocorrectionType = .No;
     }
 
     override func didReceiveMemoryWarning() {

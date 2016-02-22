@@ -70,15 +70,15 @@ class PassengerViewController: UIViewController, UIPickerViewDataSource, UIPicke
         }
         
         //update Parse LocationStatus
-            let query = PFQuery(className: "LocationStatus")
+        let query = PFQuery(className: "LocationStatus")
         query.whereKey("name", equalTo: locationName)
             query.findObjectsInBackgroundWithBlock() { (objects: [PFObject]?, error: NSError?) -> Void in
                 if let unwrappedObjects = objects {
                     let numPassengers = unwrappedObjects[0]["passengersWaiting"] as! Int
                     unwrappedObjects[0]["passengersWaiting"] = numPassengers + 1
                     unwrappedObjects[0].saveInBackground()
-                }
             }
+        }
     }
     
     /*---------------------
