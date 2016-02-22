@@ -142,6 +142,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return false
     }
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        // Causes the view (or one of its embedded text fields) to resign the first responder status
+        // i.e: hide the keyboard
+        self.view.endEditing(true);
+    }
     
 //    @IBAction func resetPasswordButtonPressed(sender: AnyObject) {
 //        //TODO: SHERIF DO CODE HERE!

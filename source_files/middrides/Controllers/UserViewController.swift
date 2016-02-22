@@ -21,9 +21,14 @@ class UserViewController: UIViewController {
     @IBOutlet weak var requestInfoLabel: UILabel!
     
     var hiddenControls: Bool = false {
+        // After setting the hiddenControls variable, adjust the rest of the view accordingly
         didSet {
+            // view or hide the cancel and request info according to hiddenControls
             cancelButton.hidden = hiddenControls
             requestInfoLabel.hidden = hiddenControls
+            
+            // If we are making them visible, query Parse for the requested stop location
+            // and show that location to the user
             if !hiddenControls {
                 requestInfoLabel.text = "" //just in case the following fails
                 if let user = PFUser.currentUser() {
@@ -32,7 +37,9 @@ class UserViewController: UIViewController {
                         query.whereKey("userId", equalTo: userId)
                         query.findObjectsInBackgroundWithBlock() { (objects: [PFObject]?, error: NSError?) -> Void in
                             if let unwrappedObjects = objects {
-                                let object = unwrappedObjects[0]
+                                // Get the stopname of the latest request, and display that to the user
+                                let lastRequestIndex = unwrappedObjects.count - 1;
+                                let object = unwrappedObjects[lastRequestIndex]
                                 let name = object["pickUpLocation"] as! String
                                 self.requestInfoLabel.text = "Your van is en route to\n" + name
                                 self.locationName = name
@@ -68,7 +75,7 @@ class UserViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //function that checks if the user has made a request in the past 300 seconds
+    //function that checks if the user has made a request in the past TIME_OUT seconds
     func checkTimeOut() -> Bool {
         var timeSinceLastRequest = NSTimeInterval(TIME_OUT + 1)
         let dateNow = NSDate(timeIntervalSinceNow: 0)
