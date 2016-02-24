@@ -110,6 +110,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    //Handle push notifications
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         print(userInfo)
         PFPush.handlePush(userInfo)
@@ -121,6 +122,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         channelName = channelName.stringByReplacingOccurrencesOfString("/", withString: "-")
         PFPush.unsubscribeFromChannelInBackground(channelName)
         let msg = "A van is headed to " + nextDest
+        
+        //Notify other views that the van is arriving so they update accordingly
+        NSNotificationCenter.defaultCenter().postNotificationName("vanArriving", object: nil);
         
         var curView = self.window?.rootViewController
         /*

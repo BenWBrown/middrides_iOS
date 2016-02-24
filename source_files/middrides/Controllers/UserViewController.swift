@@ -30,26 +30,11 @@ class UserViewController: UIViewController {
             // If we are making them visible, query Parse for the requested stop location
             // and show that location to the user
             if !hiddenControls {
-                requestInfoLabel.text = "" //just in case the following fails
-                if let user = PFUser.currentUser() {
-                    if let userId = user.objectId {
-                        let query = PFQuery(className: "UserRequest")
-                        query.whereKey("userId", equalTo: userId)
-                        query.findObjectsInBackgroundWithBlock() { (objects: [PFObject]?, error: NSError?) -> Void in
-                            if let unwrappedObjects = objects {
-                                // Get the stopname of the latest request, and display that to the user
-                                let lastRequestIndex = unwrappedObjects.count - 1;
-                                let object = unwrappedObjects[lastRequestIndex]
-                                let name = object["pickUpLocation"] as! String
-                                self.requestInfoLabel.text = "Your van is en route to\n" + name
-                                self.locationName = name
-                            }
-                        }
-                    }
-                }
+                requestInfoLabel.text = "We'll notify you when your van is coming!"
             }
         }
     }
+
     
     var locationName: String?
     
@@ -67,6 +52,9 @@ class UserViewController: UIViewController {
                 hiddenControls = true
             }
         }
+        
+        // Add a listener to change the info label when dispatcher sends push
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "displayVanArrivingMessage:", name: "vanArriving", object: nil);
 
     }
 
@@ -150,6 +138,33 @@ class UserViewController: UIViewController {
         hiddenControls = true
     }
     
+    func displayVanArrivingMessage(sender: AnyObject) -> Void{
+        if let user = PFUser.currentUser() {
+            if let userId = user.objectId {
+                let query = PFQuery(className: "UserRequest")
+                query.whereKey("userId", equalTo: userId)
+                query.findObjectsInBackgroundWithBlock() { (objects: [PFObject]?, error: NSError?) -> Void in
+                    if let unwrappedObjects = objects {
+                        // Get the stopname of the latest request, and display that to the user
+                        let lastRequestIndex = unwrappedObjects.count - 1;
+                        let object = unwrappedObjects[lastRequestIndex]
+                        let name = object["pickUpLocation"] as! String
+                        self.requestInfoLabel.text = "Your van is en route to\n" + name
+                        self.locationName = name
+                    }
+                }
+            }
+        }
+        
+        self.cancelButton.hidden = true;
+        
+        let FIVE_MINUTES:Double = 5 * 60;
+        
+        runAfterDelay(FIVE_MINUTES){
+            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "requestPending");
+            self.hiddenControls = true;
+        };
+    }
     
     @IBAction func logoutButtonPressed(sender: AnyObject) {
         // If the user has requested a van and is trying to logout, they should be informed.
@@ -167,7 +182,15 @@ class UserViewController: UIViewController {
             //If user cancels, nothing happens
         }))
         
-        presentViewController(logoutConfirmation, animated: true, completion: nil)
+        presentViewController(logoutConfirmation, animated: true, completion:  nil)
+    }
+    
+    /*
+     * Runs a given code block after an n second delay
+     */
+    func runAfterDelay(delay: NSTimeInterval, block: dispatch_block_t) {
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC)));
+        dispatch_after(time, dispatch_get_main_queue(), block);
     }
     /*
     // MARK: - Navigation
