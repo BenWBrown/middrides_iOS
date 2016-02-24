@@ -156,12 +156,25 @@ class UserViewController: UIViewController {
             }
         }
         
+        // Hide the "cancel request" button
         self.cancelButton.hidden = true;
         
+        // When the user receives a push, we want to reset the screen after 5 minutes
+        // Since we presume that by then, the van has arrived to the stop
         let FIVE_MINUTES:Double = 5 * 60;
-        
         runAfterDelay(FIVE_MINUTES){
+            // Change all booleans that indicate if a request is pending
+            
+            // First change locally
             NSUserDefaults.standardUserDefaults().setBool(false, forKey: "requestPending");
+            
+            // Then change the Parse table to reflect this
+            if let user = PFUser.currentUser(){
+                user["pendingRequest"] = false;
+                user.saveInBackground();
+            }
+            
+            // Reset the screen back to normal
             self.hiddenControls = true;
             
             for notification in UIApplication.sharedApplication().scheduledLocalNotifications as [UILocalNotification]! { // loop through notifications...

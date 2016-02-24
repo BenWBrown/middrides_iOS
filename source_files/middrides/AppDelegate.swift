@@ -134,7 +134,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var channelName = nextDest.stringByReplacingOccurrencesOfString(" ", withString: "-")
         channelName = channelName.stringByReplacingOccurrencesOfString("/", withString: "-")
         PFPush.unsubscribeFromChannelInBackground(channelName)
-        let msg = "Your van is headed to " + nextDest + " now!";
+        let msg = "Your van is headed to " + nextDest + " now!"     ;
         
         // create a local notification
         let notification = UILocalNotification()
