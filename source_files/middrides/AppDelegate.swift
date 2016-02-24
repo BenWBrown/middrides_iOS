@@ -110,6 +110,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        print("Called in background");
+        self.application(application, didReceiveRemoteNotification: userInfo);
+        if(application.applicationState == UIApplicationState.Inactive){
+            print("inactive");
+        }else if (application.applicationState == UIApplicationState.Background){
+            print("background");
+        } else{
+            print("Active");
+        }
+        completionHandler(UIBackgroundFetchResult.NewData);
+    }
+    
     //Handle push notifications
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         print(userInfo)
@@ -121,7 +134,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var channelName = nextDest.stringByReplacingOccurrencesOfString(" ", withString: "-")
         channelName = channelName.stringByReplacingOccurrencesOfString("/", withString: "-")
         PFPush.unsubscribeFromChannelInBackground(channelName)
-        let msg = "A van is headed to " + nextDest
+        let msg = "Your van is headed to " + nextDest + " now!";
+        
+        // create a local notification
+        let notification = UILocalNotification()
+        notification.alertBody = msg // text that will be displayed in the notification
+        notification.alertAction = "open" // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view"
+        // When notification will be fired
+        notification.fireDate = NSDate(timeIntervalSinceNow: 5);
+        // play default sound
+        notification.soundName = UILocalNotificationDefaultSoundName
+        // assign a unique identifier to the notification so that we can retrieve it later
+        notification.userInfo = ["UUID": userInfo["parsePushId" ]!, ]
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        
+        //Save the reference to the notification so we can remove it later
+        NSUserDefaults.standardUserDefaults().setObject(userInfo["parsePushId"], forKey: "currentPushId");
         
         //Notify other views that the van is arriving so they update accordingly
         NSNotificationCenter.defaultCenter().postNotificationName("vanArriving", object: nil);
@@ -135,6 +163,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             curView = curView?.presentedViewController
         }
         
+
         let alert = UIAlertController(title: "MiddRides Notice!", message: msg, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(okButton)
         

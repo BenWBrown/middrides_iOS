@@ -163,6 +163,18 @@ class UserViewController: UIViewController {
         runAfterDelay(FIVE_MINUTES){
             NSUserDefaults.standardUserDefaults().setBool(false, forKey: "requestPending");
             self.hiddenControls = true;
+            
+            for notification in UIApplication.sharedApplication().scheduledLocalNotifications as [UILocalNotification]! { // loop through notifications...
+                
+                if let pushId = NSUserDefaults.standardUserDefaults().objectForKey("currentPushId"){
+                    // and cancel the notification that corresponds to this notification instance (matched by UUID)
+                    if (notification.userInfo!["UUID"] as! String == pushId as! String) {
+                        // there should be a maximum of one match on UUID
+                        UIApplication.sharedApplication().cancelLocalNotification(notification)
+                        break
+                    }
+                }
+            }
         };
     }
     
