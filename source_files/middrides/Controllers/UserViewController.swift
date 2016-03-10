@@ -71,7 +71,7 @@ class UserViewController: UIViewController {
     //function that checks if the user has made a request in the past TIME_OUT seconds
     func checkTimeOut() -> Bool {
         
-        // Check if it has been more than TIME_OUT seconds since th
+        // Check if it has been more than TIME_OUT seconds since the last request
         
         var timeSinceLastRequest = NSTimeInterval(TIME_OUT + 1)
         let dateNow = NSDate(timeIntervalSinceNow: 0)
@@ -80,8 +80,7 @@ class UserViewController: UIViewController {
         if let dateSinceLastRequest = NSUserDefaults.standardUserDefaults().objectForKey("dateSinceLastRequest") as? NSDate {
             timeSinceLastRequest = dateNow.timeIntervalSinceDate(dateSinceLastRequest)
         }
-        print(timeSinceLastRequest)
-        print(TIME_OUT)
+
         return timeSinceLastRequest > TIME_OUT
     }
     
@@ -110,6 +109,7 @@ class UserViewController: UIViewController {
         self.displayPopUpMessage("Success", message: "Van request canceled")
         hiddenControls = true
     }
+    
     /**
     Cancels the current van request by doing the following: 
         * Delete all of the user's current requests from the UserRequest table
@@ -179,12 +179,6 @@ class UserViewController: UIViewController {
                     }
                 }
             }
-        }
-        
-        
-        // Then change the Parse table to reflect this
-        if let user = PFUser.currentUser(){
-
         }
         
         // Hide the "cancel request" button
