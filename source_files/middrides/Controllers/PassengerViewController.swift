@@ -65,6 +65,7 @@ class PassengerViewController: UIViewController, UIPickerViewDataSource, UIPicke
             }
         }
         if let user = PFUser.currentUser() {
+            print("pendingRequest in passneger view controller");
             user["pendingRequest"] = true
             user.saveInBackground()
         }

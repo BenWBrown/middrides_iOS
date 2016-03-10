@@ -42,13 +42,18 @@ class UserViewController: UIViewController {
         super.viewDidLoad()
         
         if let user = PFUser.currentUser() {
+//            user.
             if let pendingRequest = user["pendingRequest"] as? Bool {
+                print(pendingRequest);
                 if pendingRequest {
+                    print(1);
                     hiddenControls = false
                 } else {
+                    print(2);
                     hiddenControls = true
                 }
             } else {
+                print(3);
                 hiddenControls = true
             }
         }
@@ -65,8 +70,13 @@ class UserViewController: UIViewController {
     
     //function that checks if the user has made a request in the past TIME_OUT seconds
     func checkTimeOut() -> Bool {
+        
+        // Check if it has been more than TIME_OUT seconds since th
+        
         var timeSinceLastRequest = NSTimeInterval(TIME_OUT + 1)
         let dateNow = NSDate(timeIntervalSinceNow: 0)
+        
+        
         if let dateSinceLastRequest = NSUserDefaults.standardUserDefaults().objectForKey("dateSinceLastRequest") as? NSDate {
             timeSinceLastRequest = dateNow.timeIntervalSinceDate(dateSinceLastRequest)
         }
@@ -78,20 +88,36 @@ class UserViewController: UIViewController {
     @IBAction func requestVanButtonPressed(sender: UIButton) {
         if checkTimeOut() {
             if hiddenControls {
-                NSUserDefaults.standardUserDefaults().setBool(true, forKey: "requestPending");
+
                 self.performSegueWithIdentifier("userViewToVanRequestView", sender: self)
             } else {
                 self.displayPopUpMessage("Error", message: "Cannot make two van requests at the same time")
             }
         } else {
-            self.displayPopUpMessage("Error", message: "Cannot make van requests within 5 minutes of each other")
+            self.displayPopUpMessage("Error", message: "Cannot make van requests within 5 minutes of each other");
         }
-        
     }
 
-    
+    /**
+    Cancels the current request and displays a success message
+     
+     TODO: Handle cancellation failures
+    */
     @IBAction func cancelRequestButtonPressed(sender: UIButton) {
-        var locationID: String?
+        cancelCurrentRequest();
+        
+        //display message
+        self.displayPopUpMessage("Success", message: "Van request canceled")
+        hiddenControls = true
+    }
+    /**
+    Cancels the current van request by doing the following: 
+        * Delete all of the user's current requests from the UserRequest table
+        * Unsubscribes from Parse push notifications
+        * Decrements the LocationStatus class by 1 in the row of the requested stop
+        * Sets our local pendingRequest variable to false
+    */
+    func cancelCurrentRequest() -> Void {
         
         //update Parse User and UserRequest
         if let user = PFUser.currentUser() {
@@ -102,7 +128,6 @@ class UserViewController: UIViewController {
                 query.findObjectsInBackgroundWithBlock() { (objects: [PFObject]?, error: NSError?) -> Void in
                     if let unwrappedObjects = objects {
                         for object in unwrappedObjects {
-                            locationID = object["locationID"] as? String
                             var locName = object["pickUpLocation"] as? String
                             locName = locName!.stringByReplacingOccurrencesOfString(" ", withString: "-")
                             locName = locName!.stringByReplacingOccurrencesOfString("/", withString: "-")
@@ -131,15 +156,15 @@ class UserViewController: UIViewController {
         }
         
         //Update local variables
-        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "requestPending");
-        
-        //display message
-        self.displayPopUpMessage("Success", message: "Van request canceled")
-        hiddenControls = true
+        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "pendingRequest");
     }
     
     func displayVanArrivingMessage(sender: AnyObject) -> Void{
         if let user = PFUser.currentUser() {
+            
+            user["pendingRequest"] = false;
+            user.saveInBackground();
+            
             if let userId = user.objectId {
                 let query = PFQuery(className: "UserRequest")
                 query.whereKey("userId", equalTo: userId)
@@ -156,33 +181,36 @@ class UserViewController: UIViewController {
             }
         }
         
+        
+        // Then change the Parse table to reflect this
+        if let user = PFUser.currentUser(){
+
+        }
+        
         // Hide the "cancel request" button
         self.cancelButton.hidden = true;
         
         // When the user receives a push, we want to reset the screen after 5 minutes
         // Since we presume that by then, the van has arrived to the stop
         let FIVE_MINUTES:Double = 5 * 60;
+        
         runAfterDelay(FIVE_MINUTES){
-            // Change all booleans that indicate if a request is pending
+            print("Run delayed code bock to reset the screen");
             
             // First change locally
-            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "requestPending");
-            
-            // Then change the Parse table to reflect this
-            if let user = PFUser.currentUser(){
-                user["pendingRequest"] = false;
-                user.saveInBackground();
-            }
+            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "pendingRequest");
             
             // Reset the screen back to normal
             self.hiddenControls = true;
             
+            // Remove the local notification from the notification center in the iPhone
             for notification in UIApplication.sharedApplication().scheduledLocalNotifications as [UILocalNotification]! { // loop through notifications...
                 
                 if let pushId = NSUserDefaults.standardUserDefaults().objectForKey("currentPushId"){
                     // and cancel the notification that corresponds to this notification instance (matched by UUID)
                     if (notification.userInfo!["UUID"] as! String == pushId as! String) {
-                        // there should be a maximum of one match on UUID
+                        // there should be a maximum of one match on UUID, so we break the loop once
+                        // we find it
                         UIApplication.sharedApplication().cancelLocalNotification(notification)
                         break
                     }
@@ -197,7 +225,7 @@ class UserViewController: UIViewController {
         
         logoutConfirmation.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
             // If user confirms logout
-            self.cancelRequestButtonPressed(self.cancelButton);
+            self.cancelCurrentRequest();
             PFUser.logOutInBackgroundWithBlock() { (error: NSError?) -> Void in
                 self.performSegueWithIdentifier("userViewToLoginView", sender: self)
             }

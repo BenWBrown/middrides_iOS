@@ -84,6 +84,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     print("ERROR: NO USER")
                     return
                 }
+                
                 let emailVerified = unwrappedUser["emailVerified"] as! Bool
                 if emailVerified {
                     if self.checkAnnouncement() {
