@@ -62,11 +62,11 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                         print(errorString)
                     }
                 }else{
-                    self.displayPopUpMessage("Registration success!", message: "You successfully registered for MiddRides! Please verify your email to use the app");
+                    self.displayPopUpMessage("Registration success!", message: "You successfully registered for MiddRides! Please verify your email to use the app!");
+//                    PFUser.logOut();
+                    self.performSegueWithIdentifier("registerViewToLoginView", sender: self)
                 }
             }
-            
-            self.performSegueWithIdentifier("registerViewToLoginView", sender: self)
         }
         else {
             //transition to error message

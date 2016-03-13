@@ -34,9 +34,6 @@ class UserViewController: UIViewController {
             }
         }
     }
-
-    
-    var locationName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,19 +106,21 @@ class UserViewController: UIViewController {
         self.displayPopUpMessage("Success", message: "Van request canceled")
         hiddenControls = true
     }
-    
+        
     /**
     Cancels the current van request by doing the following: 
         * Delete all of the user's current requests from the UserRequest table
         * Unsubscribes from Parse push notifications
         * Decrements the LocationStatus class by 1 in the row of the requested stop
+        * Sets Parse pendingRequest to false in the User table
         * Sets our local pendingRequest variable to false
     */
     func cancelCurrentRequest() -> Void {
         
         //update Parse User and UserRequest
         if let user = PFUser.currentUser() {
-            user["pendingRequest"] = false
+            user["pendingRequest"] = false;
+            
             if let userId = user.objectId {
                 let query = PFQuery(className: "UserRequest")
                 query.whereKey("userId", equalTo: userId)
@@ -137,16 +136,24 @@ class UserViewController: UIViewController {
                     }
                 }
             }
-            user.saveInBackground()
+            
+            user.saveInBackground();
         }
         
-        //update Parse LocationStatus
-        if let unwrappedLocationName = self.locationName {
+        /* update Parse LocationStatus */
+        
+        //Get the location of pending/current request
+        let pendingRequestLocation = NSUserDefaults.standardUserDefaults().objectForKey("pendingRequestLocation");
+        
+        if let unwrappedLocationName = pendingRequestLocation as? String {
+            print("\(unwrappedLocationName)");
             let query = PFQuery(className: "LocationStatus")
             query.whereKey("name", equalTo: unwrappedLocationName)
             query.findObjectsInBackgroundWithBlock() { (objects: [PFObject]?, error: NSError?) -> Void in
                 if let unwrappedObjects = objects {
                     if (unwrappedObjects[0]["passengersWaiting"] as! Int) > 0 {
+                        
+                        print("unwrapped location: \(unwrappedObjects[0])");
                         let numPassengers = unwrappedObjects[0]["passengersWaiting"] as! Int
                         unwrappedObjects[0]["passengersWaiting"] = numPassengers - 1
                     }
@@ -175,7 +182,7 @@ class UserViewController: UIViewController {
                         let object = unwrappedObjects[lastRequestIndex]
                         let name = object["pickUpLocation"] as! String
                         self.requestInfoLabel.text = "Your van is en route to\n" + name
-                        self.locationName = name
+                        self.requestInfoLabel.font = UIFont.systemFontOfSize(20);
                     }
                 }
             }

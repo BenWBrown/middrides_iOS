@@ -47,7 +47,10 @@ class PassengerViewController: UIViewController, UIPickerViewDataSource, UIPicke
         req["userId"] = PFUser.currentUser()?.objectId
         req["email"] = PFUser.currentUser()?.email
         
-        //get channel name working right
+        // Save the stop name locally
+        NSUserDefaults.standardUserDefaults().setObject(locationName, forKey: "pendingRequestLocation");
+        
+        //Subscribe to the Parse push notification channel related to this location.
         var channelName = self.rideLocations[index]
         channelName = channelName.stringByReplacingOccurrencesOfString(" ", withString: "-")
         channelName = channelName.stringByReplacingOccurrencesOfString("/", withString: "-")
@@ -76,7 +79,7 @@ class PassengerViewController: UIViewController, UIPickerViewDataSource, UIPicke
             query.findObjectsInBackgroundWithBlock() { (objects: [PFObject]?, error: NSError?) -> Void in
                 if let unwrappedObjects = objects {
                     let numPassengers = unwrappedObjects[0]["passengersWaiting"] as! Int
-                    unwrappedObjects[0]["passengersWaiting"] = numPassengers + 1
+                    unwrappedObjects[0]["passengersWaiting"] = numPassengers + 1;
                     unwrappedObjects[0].saveInBackground()
             }
         }

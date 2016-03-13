@@ -39,9 +39,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         Username.autocorrectionType = .No;
         Password.autocorrectionType = .No;
         
-        // login known user
-        let curUser = PFUser.currentUser();
-        if (curUser != nil){
+        // Synchronize user information from the server. If an error occurs, use
+        // the user info stored locally.
+        let curUser:PFUser?;
+        do{
+            curUser = try PFUser.currentUser()?.fetch();
+        }catch{
+            curUser = PFUser.currentUser();
+        }
+    
+        if curUser != nil{
             if (curUser!.username == "dispatcher@middlebury.edu"){
                 self.performSegueWithIdentifier("loginViewToDispatcherView", sender: self)
             } else {
@@ -52,7 +59,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     dispatch_async(dispatch_get_main_queue()) {
                         /*solution from stackOverflow answer at http://stackoverflow.com/questions/24982722/performseguewithidentifier-does-not-work
                         */
-                        self.performSegueWithIdentifier("loginViewToUserView", sender: self)
+                        
+                        // If the user has verified their email then log them in.
+                        if(curUser!["emailVerified"] as! Bool){
+                            self.performSegueWithIdentifier("loginViewToUserView", sender: self);
+                        }else{
+                            //If not verified, do nothing.
+                        }
                     }
                 }
             }

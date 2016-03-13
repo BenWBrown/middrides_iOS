@@ -560,7 +560,7 @@
                                     <constraint firstAttribute="height" constant="50" id="OcQ-t8-aA7"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="344" id="s6C-Ck-Clp"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.39982357880000002" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
