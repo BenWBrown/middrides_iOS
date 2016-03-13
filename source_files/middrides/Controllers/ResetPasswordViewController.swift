@@ -64,9 +64,17 @@ class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
                     if (results.count > 0){
                         
                         PFUser.requestPasswordResetForEmailInBackground(email!);
-                        self.displayPopUpMessage("Reset Email Sent", message: self.resetEmailSentMessage);
-                        self.performSegueWithIdentifier("resetPasswordViewToLoginView", sender: self)
                         
+                        if let user = PFUser.currentUser(){
+                            PFUser.logOutInBackground();
+                        }
+                        
+                        self.displayPopUpMessageWithBlock("Reset Email Sent", message: self.resetEmailSentMessage, completionBlock: {
+                            (alertAction) -> Void in
+                            
+                            self.performSegueWithIdentifier("resetPasswordViewToLoginView", sender: self)
+                        });
+
                     } else{
                         // Email not found
                         self.displayPopUpMessage("Email Not Found" , message: self.emailNotFoundMessage);

@@ -16,11 +16,18 @@ import UIKit
 import Parse
 import Bolts
 
+// Extend all UIViewControllers so that they now contain this method
 extension UIViewController {
     func displayPopUpMessage(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
         self.presentViewController(alertController, animated: false, completion: nil)
+    }
+    
+    func displayPopUpMessageWithBlock(title: String, message: String, completionBlock:((UIAlertAction) -> Void)?) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: completionBlock))
+        self.presentViewController(alertController, animated: false, completion:nil)
     }
 }
 
@@ -43,11 +50,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // the user info stored locally.
         let curUser:PFUser?;
         do{
+            print("fetched user from DB")
             curUser = try PFUser.currentUser()?.fetch();
         }catch{
+            print("fetching user from db failed. using cached user info");
             curUser = PFUser.currentUser();
         }
-    
+        
         if curUser != nil{
             if (curUser!.username == "dispatcher@middlebury.edu"){
                 self.performSegueWithIdentifier("loginViewToDispatcherView", sender: self)

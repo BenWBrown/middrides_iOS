@@ -62,9 +62,12 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                         print(errorString)
                     }
                 }else{
-                    self.displayPopUpMessage("Registration success!", message: "You successfully registered for MiddRides! Please verify your email to use the app!");
-//                    PFUser.logOut();
-                    self.performSegueWithIdentifier("registerViewToLoginView", sender: self)
+                    //Display a success message. Once user clicks 'ok', take them to login view.
+                    self.displayPopUpMessageWithBlock("Registration success!", message: "You successfully registered for MiddRides! Please verify your email to use the app!", completionBlock: {
+                            (alertAction) -> Void in
+                        
+                            self.performSegueWithIdentifier("registerViewToLoginView", sender: self)
+                        });
                 }
             }
         }
