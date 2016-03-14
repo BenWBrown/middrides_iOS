@@ -90,6 +90,11 @@ class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
+    // Hide keyboard
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true);
+    }
+    
     /*
     // MARK: - Navigation
 

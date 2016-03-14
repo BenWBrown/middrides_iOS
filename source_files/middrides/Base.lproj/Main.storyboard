@@ -18,8 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vbk-Z2-mZx">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Middlebury Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vbk-Z2-mZx">
                                 <rect key="frame" x="28" y="214" width="544" height="30"/>
+                                <color key="tintColor" red="0.39982357880000002" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="JaC-xP-OLB"/>
                                 </constraints>
@@ -33,6 +34,7 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SME-XA-axO">
                                 <rect key="frame" x="28" y="252" width="544" height="30"/>
+                                <color key="tintColor" red="0.39982357880000002" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="oPD-Fe-cuX"/>
                                 </constraints>
@@ -93,6 +95,7 @@
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o6g-ek-JgI">
                                 <rect key="frame" x="28" y="290" width="544" height="30"/>
+                                <color key="tintColor" red="0.39982357880000002" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="l2g-HE-1Tw"/>
                                 </constraints>
@@ -166,6 +169,7 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AQK-xZ-3iI">
                                 <rect key="frame" x="28" y="214" width="544" height="30"/>
+                                <color key="tintColor" red="0.39982357880000002" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="324-H5-PbA"/>
                                 </constraints>
@@ -179,6 +183,7 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="25z-tq-0cZ">
                                 <rect key="frame" x="28" y="252" width="544" height="30"/>
+                                <color key="tintColor" red="0.39982357880000002" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="QSf-DV-hRC"/>
                                 </constraints>
@@ -644,6 +649,7 @@
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rjg-yG-Szh">
                                 <rect key="frame" x="28" y="214" width="544" height="30"/>
+                                <color key="tintColor" red="0.39982357880000002" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="Sly-o2-mye"/>
                                 </constraints>
@@ -834,8 +840,8 @@
         <image name="Van Logo White" width="1430" height="972"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2sj-G0-PWV"/>
-        <segue reference="PQh-Qk-bCs"/>
+        <segue reference="npW-wF-9gM"/>
+        <segue reference="T4C-x0-BkF"/>
         <segue reference="yc0-0m-zcl"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
